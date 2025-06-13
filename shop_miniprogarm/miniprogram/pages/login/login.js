@@ -46,9 +46,9 @@ Page({
             wx.showToast({
               title: '跳转管理页面',
             })
-            wx.navigateTo({ url: '/pages/admin/admin' });
+            wx.redirectTo({ url: '/pages/admin/admin' });
           } else {
-            wx.navigateTo({ url: '/pages/products/products' });
+            wx.redirectTo({ url: '/pages/products/products' });
           }
         },
         fail:err=>{

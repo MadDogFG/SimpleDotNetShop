@@ -25,18 +25,21 @@
 
 /* 内容区域 */
 .content {
+  box-sizing: border-box;
   flex: 1;
   padding: 15px;
   overflow: hidden;
+  width: 100%;
 }
 
 /* 商品网格 - 固定3行3列 */
 .product-grid {
+  margin-top: 5%;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3列 */
   grid-template-rows: repeat(3, 1fr); /* 3行 */
   gap: 15px;
-  height: calc(100% - 100px); /* 为其他元素预留空间 */
+  height: 85%; /* 为其他元素预留空间 */
 }
 
 /* 商品项 */
@@ -174,10 +177,12 @@
 
 /* 添加按钮 */
 .add-button {
+  position: relative;
   background: #07c160;
   color: white;
   border-radius: 25px;
-  margin: 15px 0 30px;
+  margin-bottom: 80px;
+  margin-top: 10px;
   font-size: 16px;
   height: 45px;
   line-height: 27px;
@@ -247,4 +252,157 @@
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* 底部导航栏样式 */
+.tabbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  background-color: white;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.tabbar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #888;
+  padding: 5px 0;
+}
+
+.tabbar-item.active {
+  color: #1989fa;
+}
+
+.tab-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 3px;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  width: 85%;
+  max-width: 500px;
+  height: auto;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.modal-header {
+  padding: 20px 16px 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  position: relative;
+}
+
+.close-icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+}
+
+.modal-body {
+  padding: 0 20px;
+  max-height: 50vh;
+  box-sizing: border-box;
+}
+
+.form-item {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+input, textarea {
+  width: 90%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.modal-footer {
+  display: flex;
+  border-top: 1px solid #eee;
+  padding: 12px 0;
+}
+
+.modal-btn {
+  display: flex;
+  justify-content: center;
+  max-width: 120px;
+  height: 40px;
+  font-size: 15px;
+  border-radius: 8px;
+  background: white;
+}
+
+.modal-btn.cancel {
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.modal-btn.submit {
+  background: #1989fa;
+  color: white;
+}
+
+.modal-btn.submit[disabled] {
+  opacity: 0.6;
+}
+
+/* 恢复上架按钮样式 */
+.restore-btn {
+  position: relative;
+  top: 50%;
+  transform: translateX(0%);
+  background-color: #1989fa;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  height: 28px;
+  line-height: 20px;
+  z-index: 10;
+}
+
+.restore-btn::after {
+  display: none; /* 移除默认样式 */
+}
+
+.restore-btn[disabled] {
+  opacity: 0.7;
 }

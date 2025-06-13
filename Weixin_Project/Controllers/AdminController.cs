@@ -96,6 +96,19 @@ namespace Weixin_Project.Controllers
             return Ok($"修改{updatedProduct.Name}商品成功");
         }
 
+        // 恢复商品
+        [HttpPut]
+        public async Task<IActionResult> RestoreProduct(int id)
+        {
+            var product = await dbContext.Products.FindAsync(id);
+            if (product == null) return NotFound();
+
+            product.IsDeleted = false;
+
+            await dbContext.SaveChangesAsync();
+            return Ok($"恢复{product.Name}商品成功");
+        }
+
         // 软删除商品
         [HttpDelete]
         public async Task<IActionResult> DeleteProduct(int id)

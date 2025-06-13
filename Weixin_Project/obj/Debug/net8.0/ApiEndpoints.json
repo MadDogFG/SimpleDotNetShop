@@ -70,6 +70,22 @@
   },
   {
     "ContainingType": "Weixin_Project.Controllers.AdminController",
+    "Method": "RestoreProduct",
+    "RelativePath": "api/Admin/RestoreProduct",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminController",
     "Method": "UpdateProduct",
     "RelativePath": "api/Admin/UpdateProduct",
     "HttpMethod": "PUT",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "41a+flI1krg=",
+  "dgSpecHash": "MDr8Lc+hb8k=",
   "success": true,
-  "projectFilePath": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Weixin_Project.csproj",
+  "projectFilePath": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Weixin_Project.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\a1347\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\a1347\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

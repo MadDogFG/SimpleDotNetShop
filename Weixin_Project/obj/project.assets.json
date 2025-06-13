@@ -5147,11 +5147,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Weixin_Project.csproj",
+      "projectUniqueName": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Weixin_Project.csproj",
       "projectName": "Weixin_Project",
-      "projectPath": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Weixin_Project.csproj",
+      "projectPath": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Weixin_Project.csproj",
       "packagesPath": "C:\\Users\\a1347\\.nuget\\packages\\",
-      "outputPath": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\obj\\",
+      "outputPath": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\a1347\\AppData\\Roaming\\NuGet\\NuGet.Config",
