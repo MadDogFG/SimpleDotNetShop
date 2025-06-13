@@ -1,0 +1,32 @@
+<view class="container">
+  <view class="title">用户注册</view>
+  
+  <input 
+    placeholder="设置用户名" 
+    value="{{username}}" 
+    bindinput="onUsernameInput" 
+    class="input"
+  />
+  
+  <input 
+    placeholder="设置密码" 
+    password 
+    value="{{password}}" 
+    bindinput="onPasswordInput" 
+    class="input"
+  />
+  
+  <input 
+    placeholder="确认密码" 
+    password 
+    value="{{confirmPassword}}" 
+    bindinput="onConfirmPasswordInput" 
+    class="input"
+  />
+  
+  <button type="primary" bindtap="onRegister" class="btn">注册</button>
+  
+  <view class="login-link" bindtap="goToLogin">
+    已有账号？<text class="link-text">返回登录</text>
+  </view>
+</view>

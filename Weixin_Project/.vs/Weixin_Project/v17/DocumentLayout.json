@@ -1,0 +1,261 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\pagedresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:pagedresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\productconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:productconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\addproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:addproductrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\loginvaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:loginvaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\registervaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:registervaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\initdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:initdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\c#\\weixin_project\\migrations\\20250612035351_01_addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:migrations\\20250612035351_01_addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PagedResponse.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\PagedResponse.cs",
+              "RelativeDocumentMoniker": "PagedResponse.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\PagedResponse.cs",
+              "RelativeToolTip": "PagedResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T14:41:46.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Product.cs",
+              "RelativeDocumentMoniker": "Product.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Product.cs",
+              "RelativeToolTip": "Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T03:28:12.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T06:39:51.006Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwCkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-09T07:33:21.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "LoginRequest.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\LoginRequest.cs",
+              "RelativeToolTip": "LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T06:33:39.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-10T04:17:55.859Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddProductRequest.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\AddProductRequest.cs",
+              "RelativeDocumentMoniker": "AddProductRequest.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\AddProductRequest.cs",
+              "RelativeToolTip": "AddProductRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T04:27:01.665Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwCQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T03:48:48.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginVaildator.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\LoginVaildator.cs",
+              "RelativeDocumentMoniker": "LoginVaildator.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\LoginVaildator.cs",
+              "RelativeToolTip": "LoginVaildator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T06:48:46.489Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductConfig.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\ProductConfig.cs",
+              "RelativeDocumentMoniker": "ProductConfig.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\ProductConfig.cs",
+              "RelativeToolTip": "ProductConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T03:37:25.618Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20250612035351_01_AddProduct.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Migrations\\20250612035351_01_AddProduct.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250612035351_01_AddProduct.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\Migrations\\20250612035351_01_AddProduct.cs",
+              "RelativeToolTip": "Migrations\\20250612035351_01_AddProduct.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T03:53:51.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "InitData.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\InitData.cs",
+              "RelativeDocumentMoniker": "InitData.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\InitData.cs",
+              "RelativeToolTip": "InitData.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBMAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T06:19:17.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ApplicationDbContext.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T03:52:42.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RegisterVaildator.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\RegisterVaildator.cs",
+              "RelativeDocumentMoniker": "RegisterVaildator.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\RegisterVaildator.cs",
+              "RelativeToolTip": "RegisterVaildator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T12:50:18.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "RegisterRequest.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\C#\\Weixin_Project\\RegisterRequest.cs",
+              "RelativeToolTip": "RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T12:51:02.461Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

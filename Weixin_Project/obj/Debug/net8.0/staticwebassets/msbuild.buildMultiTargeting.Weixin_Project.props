@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Weixin_Project.props" />
+</Project>

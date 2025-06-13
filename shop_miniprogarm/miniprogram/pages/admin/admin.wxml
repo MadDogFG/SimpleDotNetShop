@@ -1,0 +1,89 @@
+<view class="container">
+  <!-- 顶部标题栏 -->
+  <view class="header">
+    <text class="header-title">后台管理系统</text>
+  </view>
+  
+  <!-- 商品列表区域 (3x3网格) -->
+  <view class="content">
+    <view class="product-grid">
+      <block wx:for="{{products}}" wx:key="index">
+        <view wx:if="{{!item.empty}}" 
+              class="product-item {{item.isDeleted ? 'deleted' : ''}} {{selectedId === item.id ? 'selected' : ''}}"
+              bindtap="navigateToEdit"
+              data-id="{{item.id}}">
+          <!-- 删除按钮 -->
+          <image 
+            wx:if="{{!item.isDeleted}}"
+            class="delete-icon"
+            src="/images/delete.png"
+            catchtap="handleDelete"
+            data-id="{{item.id}}" 
+            data-name="{{item.name}}"
+          />
+          
+          <!-- 商品图片 -->
+          <image src="{{item.imageUrl || '/images/default-product.png'}}" class="product-image" mode="aspectFill" />
+          
+          <!-- 商品信息 -->
+          <view class="product-info">
+            <text class="product-name">{{item.name}}</text>
+            <text class="product-price">¥{{item.price.toFixed(2)}}</text>
+            <text class="product-stock">库存: {{item.stock}}</text>
+          </view>
+          
+          <!-- 删除状态标记 -->
+          <view wx:if="{{item.isDeleted}}" class="deleted-tag">已删除</view>
+        </view>
+        
+        <!-- 空占位项 -->
+        <view wx:else class="product-item empty">
+          <text>无商品</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  
+  <!-- 分页器 -->
+  <view class="pagination">
+    <button 
+      class="page-btn" 
+      disabled="{{currentPage === 1}}" 
+      bindtap="handlePageChange" 
+      data-type="prev"
+    >
+      上一页
+    </button>
+    
+    <view class="page-info">
+      {{currentPage}} / {{totalPages}}
+    </view>
+    
+    <button 
+      class="page-btn" 
+      disabled="{{currentPage === totalPages}}" 
+      bindtap="handlePageChange" 
+      data-type="next"
+    >
+      下一页
+    </button>
+  </view>
+  
+  <!-- 添加商品按钮 -->
+  <button class="add-button" bindtap="navigateToAdd">添加商品</button>
+  
+  <!-- 删除确认弹窗 -->
+  <view wx:if="{{selectedId}}" class="delete-confirm">
+    <text>确定要删除"{{selectedProductName}}"吗？</text>
+    <view class="confirm-buttons">
+      <button class="confirm-btn" bindtap="confirmDelete">删除</button>
+      <button class="cancel-btn" bindtap="cancelSelect">取消</button>
+    </view>
+  </view>
+  
+  <!-- 加载指示器 -->
+  <view wx:if="{{loading}}" class="loading-overlay">
+    <view class="loading-spinner"></view>
+    <text>加载中...</text>
+  </view>
+</view>

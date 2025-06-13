@@ -1,0 +1,6 @@
+@Weixin_Project_HostAddress = http://localhost:5269
+
+GET {{Weixin_Project_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

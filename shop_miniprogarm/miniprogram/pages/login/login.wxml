@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="title">欢迎登录</view>
+  
+  <input 
+    placeholder="请输入用户名" 
+    value="{{username}}" 
+    bindinput="onUsernameInput" 
+    class="input"
+  />
+  
+  <input 
+    placeholder="请输入密码" 
+    password 
+    value="{{password}}" 
+    bindinput="onPasswordInput" 
+    class="input"
+  />
+  
+  <button type="primary" bindtap="onLogin" class="btn">登录</button>
+  
+  <view class="register-link" bindtap="goToRegister">
+    还没有账号？<text class="link-text">立即注册</text>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+/* 使用和登录页相同的样式 */
+@import "../login/login.wxss";
+
+.login-link {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+  color: #666;
+}
