@@ -1,6 +1,6 @@
-﻿namespace Weixin_Project
+﻿namespace Weixin_Project.DTOs
 {
-    public class RegisterRequest
+    public class RegisterRequestDto
     {
         public string Username { get; set; }
         public string Password { get; set; }

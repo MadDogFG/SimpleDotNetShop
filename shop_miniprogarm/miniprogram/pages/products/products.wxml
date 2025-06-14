@@ -1,2 +1,62 @@
-<!--pages/products/products.wxml-->
-<text>pages/products/products.wxml</text>
+<view class="container product-list-page">
+  <!-- 搜索栏 (可选) -->
+  <view class="search-bar-container" wx:if="{{false}}"> <!-- 暂时隐藏搜索栏，后续可实现 -->
+    <input class="search-input" placeholder="搜索商品" bindconfirm="onSearch" confirm-type="search" />
+    <button class="search-btn" size="mini" bindtap="onSearch">搜索</button>
+  </view>
+
+  <block wx:if="{{loading && products.length === 0}}">
+    <view class="loading-placeholder">
+      <view class="loading-spinner-local"></view>
+      <text>加载商品中...</text>
+    </view>
+  </block>
+  <block wx:elif="{{!loading && products.length === 0 && !networkError}}">
+    <view class="empty-products">
+      <image class="empty-icon" src="/images/empty-box.png" mode="aspectFit" /> <!-- 确保有此图片 -->
+      <text class="empty-text">暂时没有商品哦～</text>
+    </view>
+  </block>
+  <block wx:elif="{{networkError}}">
+      <view class="empty-products">
+          <image class="empty-icon" src="/images/network-error.png" mode="aspectFit" />
+          <text class="empty-text">网络开小差了，请稍后重试</text>
+          <button class="retry-btn" bindtap="loadProducts">点击重试</button>
+      </view>
+  </block>
+  <block wx:else>
+    <scroll-view scroll-y class="products-grid-scroll" bindscrolltolower="loadMoreProducts" style="height: {{scrollViewHeight}}px;">
+      <view class="products-grid">
+        <view wx:for="{{products}}" wx:key="id" class="product-item-user" bindtap="navigateToDetail" data-id="{{item.id}}">
+          <image class="product-image-user" src="{{item.imageUrl && item.imageUrl !== '无' ? '/images/'+item.imageUrl : '/images/default-product.png'}}" mode="aspectFill" />
+          <view class="product-info-user">
+            <text class="product-name-user">{{item.name}}</text>
+            <view class="product-price-cart-row">
+              <text class="product-price-user">¥{{item.price}}</text>
+              <button class="add-to-cart-btn-user" catchtap="addToCart" data-product="{{item}}" wx:if="{{item.stock > 0}}" disabled="{{item.addingToCart}}">
+                <text wx:if="{{!item.addingToCart}}">添加</text>
+                <view wx:else class="loading-spinner-btn"></view>
+              </button>
+              <text wx:else class="out-of-stock-tag-user">已售罄</text>
+            </view>
+          </view>
+        </view>
+        <!-- 空占位，如果需要严格的3列对齐，且最后一行的项不足3个 -->
+        <block wx:if="{{products.length % 3 !== 0}}">
+            <view wx:for="{{3 - (products.length % 3)}}" wx:key="*this" class="product-item-user placeholder"></view>
+        </block>
+      </view>
+      <view class="load-more-indicator" wx:if="{{isLoadingMore}}">
+        <view class="loading-spinner-local small"></view>
+        <text>加载中...</text>
+      </view>
+      <view class="load-more-indicator" wx:if="{{!isLoadingMore && !hasMoreData && products.length > 0}}">
+        <text>没有更多商品了</text>
+      </view>
+    </scroll-view>
+  </block>
+
+  <!-- 回到顶部按钮 (可选) -->
+  <image src="/images/back-to-top.png" class="back-to-top-btn" wx:if="{{showBackToTop}}" bindtap="backToTop"></image>
+
+</view>

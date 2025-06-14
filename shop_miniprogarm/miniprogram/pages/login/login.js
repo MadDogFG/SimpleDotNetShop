@@ -48,7 +48,8 @@ Page({
             })
             wx.redirectTo({ url: '/pages/admin/admin' });
           } else {
-            wx.redirectTo({ url: '/pages/products/products' });
+            console.log("跳转用户首页");
+            wx.switchTab({ url: '/pages/products/products' });
           }
         },
         fail:err=>{

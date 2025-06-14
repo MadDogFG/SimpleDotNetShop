@@ -1,0 +1,56 @@
+<view class="container cart-page">
+  <block wx:if="{{loading && !cart.items.length}}">
+    <view class="loading-placeholder">
+      <view class="loading-spinner-local"></view>
+      <text>加载购物车...</text>
+    </view>
+  </block>
+  <block wx:elif="{{!cart.items || cart.items.length === 0}}">
+    <view class="empty-cart">
+      <image class="empty-icon" src="/images/empty-cart.png" mode="aspectFit" /> <!-- 确保有此图片 -->
+      <text class="empty-text">购物车还是空的哦～</text>
+      <button class="go-shopping-btn" bindtap="goShopping">去逛逛</button>
+    </view>
+  </block>
+  <block wx:else>
+    <scroll-view scroll-y class="cart-list">
+      <view wx:for="{{cart.items}}" wx:key="cartItemId" class="cart-item">
+        <image class="select-icon"
+               src="{{item.selected ? '/images/selected.png' : '/images/unselected.png'}}" 
+               bindtap="toggleSelect" data-itemid="{{item.cartItemId}}" />
+        <image class="product-image" src="{{'/images/'+item.imageUrl || '/images/default-product.png'}}" mode="aspectFill" bindtap="gotoProductDetail" data-productid="{{item.productId}}"/>
+        <view class="item-info">
+          <text class="product-name" bindtap="gotoProductDetail" data-productid="{{item.productId}}">{{item.productName}}</text>
+          <view class="item-specs" wx:if="{{item.specs}}">{{item.specs}}</view> <!-- 如果有规格信息 -->
+          <view class="price-stock-row">
+            <text class="product-price">¥{{item.price}}</text>
+            <text class="product-stock" wx:if="{{item.stock < 10 && item.stock > 0}}">仅剩{{item.stock}}件</text>
+            <text class="product-stock out-of-stock" wx:elif="{{item.stock <= 0}}">已售罄</text>
+          </view>
+        </view>
+        <view class="item-actions">
+          <view class="quantity-modifier">
+            <view class="action-btn minus {{item.quantity <= 1 ? 'disabled' : ''}}" bindtap="changeQuantity" data-itemid="{{item.cartItemId}}" data-type="minus" data-current="{{item.quantity}}">-</view>
+            <input class="quantity-input" type="number" value="{{item.quantity}}" bindblur="inputQuantity" data-itemid="{{item.cartItemId}}" data-stock="{{item.stock}}"/>
+            <view class="action-btn plus {{item.quantity >= item.stock ? 'disabled' : ''}}" bindtap="changeQuantity" data-itemid="{{item.cartItemId}}" data-type="plus" data-current="{{item.quantity}}" data-stock="{{item.stock}}">+</view>
+          </view>
+          <view class="delete-btn" bindtap="removeItem" data-itemid="{{item.cartItemId}}" data-name="{{item.productName}}">删除</view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view class="bottom-bar">
+      <view class="select-all-section" bindtap="toggleSelectAll">
+        <image class="select-icon" src="{{selectAll ? '/images/selected.png' : '/images/unselected.png'}}" />
+        <text>全选</text>
+      </view>
+      <view class="total-summary">
+        <view class="total-amount">合计: <text class="amount-value">¥{{selectedTotalAmount.toFixed(2)}}</text></view>
+        <text class="total-items-text" wx:if="{{selectedItemsCount > 0}}">共{{selectedItemsCount}}件</text>
+      </view>
+      <button class="checkout-btn {{selectedItemsCount === 0 ? 'disabled' : ''}}" bindtap="goToCheckout" disabled="{{selectedItemsCount === 0}}">
+        去结算({{selectedItemsCount}})
+      </button>
+    </view>
+  </block>
+</view>

@@ -3,172 +3,189 @@
   <view class="header">
     <text class="header-title">后台管理系统</text>
   </view>
-  
- <!-- 底部导航栏 -->
- <view class="tabbar">
-   <view class="tabbar-item {{activeTab === 'products' ? 'active' : ''}}" data-tab="products" bindtap="switchTab">
-     <image src="/images/product.png" class="tab-icon" />
-     <text>商品管理</text>
-   </view>
-   <view class="tabbar-item {{activeTab === 'orders' ? 'active' : ''}}" data-tab="orders" bindtap="switchTab">
-     <image src="/images/order.png" class="tab-icon" />
-     <text>订单管理</text>
-   </view>
-   <view class="tabbar-item {{activeTab === 'users' ? 'active' : ''}}" data-tab="users" bindtap="switchTab">
-     <image src="/images/user.png" class="tab-icon" />
-     <text>用户管理</text>
-   </view>
-   <view class="tabbar-item {{activeTab === 'stats' ? 'active' : ''}}" data-tab="stats" bindtap="switchTab">
-     <image src="/images/statistics.png" class="tab-icon" />
-     <text>统计</text>
-   </view>
-   <view class="tabbar-item {{activeTab === 'profile' ? 'active' : ''}}" data-tab="profile" bindtap="switchTab">
-     <image src="/images/profile.png" class="tab-icon" />
-     <text>个人中心</text>
-   </view>
- </view>
-  
-  <!-- 商品列表区域 (3x3网格) -->
-  <view class="content">
-    <view class="product-grid">
-      <block wx:for="{{products}}" wx:key="index">
-        <view wx:if="{{!item.empty}}" 
-              class="product-item {{item.isDeleted ? 'deleted' : ''}} {{selectedId === item.id ? 'selected' : ''}}"
-              bindtap="navigateToEdit"
-              data-id="{{item.id}}">
-          <!-- 删除按钮 -->
-          <image 
-            wx:if="{{!item.isDeleted}}"
-            class="delete-icon"
-            src="/images/delete.png"
-            catchtap="handleDelete"
-            data-id="{{item.id}}" 
-            data-name="{{item.name}}"
-          />
-          
-          <!-- 商品图片 -->
-          <image src="{{'/images/'+item.imageUrl || '/images/default-product.png'}}" class="product-image" mode="aspectFill" />
-          
-          <!-- 商品信息 -->
-          <view class="product-info">
-            <text class="product-name">{{item.name}}</text>
-            <text class="product-price">¥{{item.price}}</text>
-            <text class="product-stock">库存: {{item.stock}}</text>
+
+  <!-- 内容区域 -->
+  <view class="content-wrapper">
+    <block wx:if="{{activeTab === 'products'}}">
+      <!-- 商品列表区域 (3x3 网格) -->
+      <view class="product-grid">
+        <block wx:for="{{products}}" wx:key="id" wx:for-item="item" wx:for-index="index">
+          <view wx:if="{{!item.empty}}"
+                class="product-item {{item.isDeleted ? 'deleted' : ''}} {{selectedId === item.id ? 'selected' : ''}}"
+                bindtap="navigateToEdit"
+                data-id="{{item.id}}">
+            <!-- 删除按钮 -->
+            <!-- 仅在未删除且未选择任何商品进行删除确认时显示 -->
+            <image wx:if="{{!item.isDeleted && !selectedId}}" 
+                   class="delete-icon"
+                   src="/images/delete.png" 
+                   catchtap="handleDelete"
+                   data-id="{{item.id}}"
+                   data-name="{{item.name}}" />
+
+            <!-- 商品图片 -->
+            <image src="{{item.imageUrl && item.imageUrl !== '无' && item.imageUrl!=='' ? '/images/'+item.imageUrl : '/images/default-product.png'}}" class="product-image" mode="aspectFill" />
+
+            <!-- 商品信息 -->
+            <view class="product-info">
+              <text class="product-name">{{item.name}}</text>
+              <view class="product-details-row">
+                <text class="product-price">¥{{item.price}}</text>
+                <text class="product-stock">库存: {{item.stock}}</text>
+              </view>
+            </view>
+
+            <!-- 删除状态标记 -->
+            <view wx:if="{{item.isDeleted}}" class="deleted-tag">已下架</view>
           </view>
-          
-          <!-- 删除状态标记 -->
-          <view wx:if="{{item.isDeleted}}" class="deleted-tag">已删除</view>
+          <view wx:else class="product-item empty">
+            <text>暂无商品</text>
+          </view>
+        </block>
+      </view>
+
+      <!-- 分页器 -->
+      <view class="pagination" wx:if="{{products.length > 0}}">
+        <button class="page-btn"
+                disabled="{{currentPage === 1}}"
+                bindtap="handlePageChange"
+                data-type="prev">
+          上一页
+        </button>
+        <view class="page-info">
+          {{currentPage}} / {{totalPages}}
         </view>
-        
-        <!-- 空占位项 -->
-        <view wx:else class="product-item empty">
-          <text>无商品</text>
-        </view>
-      </block>
+        <button class="page-btn"
+                disabled="{{currentPage === totalPages}}"
+                bindtap="handlePageChange"
+                data-type="next">
+          下一页
+        </button>
+      </view>
+
+
+      <!-- 添加商品按钮 -->
+      <button class="add-button" bindtap="navigateToAdd">添加商品</button>
+    </block>
+    <block wx:elif="{{activeTab === 'orders'}}">
+        <view class="tab-placeholder">订单管理页面内容</view>
+    </block>
+    <block wx:elif="{{activeTab === 'users'}}">
+        <view class="tab-placeholder">用户管理页面内容</view>
+    </block>
+    <block wx:elif="{{activeTab === 'stats'}}">
+        <view class="tab-placeholder">统计页面内容</view>
+    </block>
+     <block wx:elif="{{activeTab === 'profile'}}">
+        <view class="tab-placeholder">个人中心页面内容</view>
+    </block>
+  </view>
+
+
+  <!-- 底部导航栏 -->
+  <view class="tabbar">
+    <view class="tabbar-item {{activeTab === 'products' ? 'active' : ''}}" data-tab="products" bindtap="switchTab">
+      <image src="/images/product.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <text>商品管理</text>
+    </view>
+    <view class="tabbar-item {{activeTab === 'orders' ? 'active' : ''}}" data-tab="orders" bindtap="switchTab">
+      <image src="/images/order.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <text>订单管理</text>
+    </view>
+    <view class="tabbar-item {{activeTab === 'users' ? 'active' : ''}}" data-tab="users" bindtap="switchTab">
+      <image src="/images/user.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <text>用户管理</text>
+    </view>
+    <view class="tabbar-item {{activeTab === 'stats' ? 'active' : ''}}" data-tab="stats" bindtap="switchTab">
+      <image src="/images/statistics.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <text>统计</text>
+    </view>
+    <view class="tabbar-item {{activeTab === 'profile' ? 'active' : ''}}" data-tab="profile" bindtap="switchTab">
+      <image src="/images/profile.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <text>个人中心</text>
     </view>
   </view>
 
-  <!-- 分页器 -->
-  <view class="pagination">
-    <button 
-      class="page-btn" 
-      disabled="{{currentPage === 1}}" 
-      bindtap="handlePageChange" 
-      data-type="prev"
-    >
-      上一页
-    </button>
-    
-    <view class="page-info">
-      {{currentPage}} / {{totalPages}}
-    </view>
-    
-    <button 
-      class="page-btn" 
-      disabled="{{currentPage === totalPages}}" 
-      bindtap="handlePageChange" 
-      data-type="next"
-    >
-      下一页
-    </button>
-  </view>
-  
-  <!-- 添加商品按钮 -->
-  <button class="add-button" bindtap="navigateToAdd">添加商品</button>
-  
   <!-- 删除确认弹窗 -->
-  <view wx:if="{{selectedId}}" class="delete-confirm">
-    <text>确定要删除"{{selectedProductName}}"吗？</text>
-    <view class="confirm-buttons">
-      <button class="confirm-btn" bindtap="confirmDelete">删除</button>
-      <button class="cancel-btn" bindtap="cancelSelect">取消</button>
+  <view wx:if="{{selectedId}}" class="delete-confirm-overlay">
+    <view class="delete-confirm-dialog">
+      <text class="delete-confirm-text">确定要删除 "{{selectedProductName}}" 吗?</text>
+      <view class="confirm-buttons">
+        <button class="dialog-btn cancel-btn" bindtap="cancelSelect">取消</button>
+        <button class="dialog-btn confirm-btn delete-action-btn" bindtap="confirmDelete" disabled="{{loading}}">删除</button>
+      </view>
     </view>
   </view>
-  
+
   <!-- 加载指示器 -->
   <view wx:if="{{loading}}" class="loading-overlay">
     <view class="loading-spinner"></view>
-    <text>加载中...</text>
+    <text class="loading-text">加载中...</text>
   </view>
 
-  <!-- 添加/编辑商品弹窗 -->
-  <view wx:if="{{showModal}}" class="modal-overlay">
+  <!-- 添加/编辑商品弹窗 (模态框) -->
+  <view wx:if="{{showModal}}" class="modal-overlay" catchtouchmove="preventTouchMove">
     <view class="modal">
       <view class="modal-header">
-        <text>{{modalTitle}}</text>
+        <text class="modal-title-text">{{modalTitle}}</text>
         <!-- 恢复上架按钮 - 只在编辑弹窗且商品已删除时显示 -->
-        <button wx:if="{{modalTitle === '编辑商品' && formData.isDeleted}}" 
-                class="restore-btn"
+        <button wx:if="{{modalTitle === '编辑商品' && formData.isDeleted}}"
+                class="restore-btn header-action-btn"
                 bindtap="restoreProduct"
-                disabled="{{loading}}"> 恢复上架</button>
-        <image src="/images/close.png" class="close-icon" bindtap="closeModal" />
+                disabled="{{loading}}">恢复上架</button>
+        <image src="/images/close.png" class="close-icon" bindtap="closeModal" /> <!-- 请确保路径正确 -->
       </view>
-      
+
       <scroll-view scroll-y="true" class="modal-body">
         <view class="form-item">
           <text class="form-label">商品名称</text>
-          <input 
-            placeholder="请输入商品名称" 
-            value="{{formData.name}}" 
-            bindinput="handleInputChange" 
-            data-field="name" 
-          />
+          <input class="form-input"
+                 placeholder="请输入商品名称"
+                 value="{{formData.name}}"
+                 bindinput="handleInputChange"
+                 data-field="name" />
         </view>
         <view class="form-item">
-          <text class="form-label">商品价格(¥)</text>
-          <input 
-            type="digit" 
-            placeholder="0.00" 
-            value="{{formData.price}}" 
-            bindinput="handleInputChange" 
-            data-field="price" 
-          />
+          <text class="form-label">商品价格 (¥)</text>
+          <input class="form-input"
+                 type="digit"
+                 placeholder="0.00"
+                 value="{{formData.price}}"
+                 bindinput="handleInputChange"
+                 data-field="price" />
         </view>
         <view class="form-item">
           <text class="form-label">商品库存</text>
-          <input 
-            type="number" 
-            placeholder="0" 
-            value="{{formData.stock}}" 
-            bindinput="handleInputChange" 
-            data-field="stock" 
-          />
+          <input class="form-input"
+                 type="number"
+                 placeholder="0"
+                 value="{{formData.stock}}"
+                 bindinput="handleInputChange"
+                 data-field="stock" />
         </view>
         <view class="form-item">
-          <text class="form-label">商品图片URL</text>
-          <textarea 
-            placeholder="请输入图片链接" 
-            value="{{formData.imageUrl}}" 
-            bindinput="handleInputChange" 
-            data-field="imageUrl" 
-            auto-height
-          />
+          <text class="form-label">商品图片 URL</text>
+          <textarea class="form-textarea"
+                    placeholder="请输入图片链接"
+                    value="{{formData.imageUrl}}"
+                    bindinput="handleInputChange"
+                    data-field="imageUrl"
+                    auto-height />
+        </view>
+         <view class="form-item">
+          <text class="form-label">商品描述</text>
+          <textarea class="form-textarea"
+                    placeholder="请输入商品描述 (可选)"
+                    value="{{formData.description}}"
+                    bindinput="handleInputChange"
+                    data-field="description"
+                    auto-height />
         </view>
       </scroll-view>
-      
+
       <view class="modal-footer">
-        <button class="modal-btn cancel" bindtap="closeModal">取消</button>
-        <button class="modal-btn submit" bindtap="submitForm" disabled="{{loading}}">确定</button>
+        <button class="modal-btn cancel-btn" bindtap="closeModal" disabled="{{loading}}">取消</button>
+        <button class="modal-btn submit-btn" bindtap="submitForm" disabled="{{loading}}">确定</button>
       </view>
     </view>
   </view>

@@ -1,24 +1,34 @@
 [
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
-    "Method": "CreateProduct",
-    "RelativePath": "api/Admin/CreateProduct",
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "CreateAddress",
+    "RelativePath": "api/Address/CreateAddress",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "addProductRequest",
-        "Type": "Weixin_Project.AddProductRequest",
+        "Name": "createAddressDto",
+        "Type": "Weixin_Project.DTOs.CreateAddressRequestDto",
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.AddressViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
-    "Method": "DeleteProduct",
-    "RelativePath": "api/Admin/DeleteProduct",
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "DeleteAddress",
+    "RelativePath": "api/Address/DeleteAddress/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -26,15 +36,233 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "GetAddressById",
+    "RelativePath": "api/Address/GetAddressById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.AddressViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "GetMyAddresses",
+    "RelativePath": "api/Address/GetMyAddresses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[Weixin_Project.DTOs.AddressViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "SetDefaultAddress",
+    "RelativePath": "api/Address/SetDefaultAddress/{id}/SetDefault",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AddressController",
+    "Method": "UpdateAddress",
+    "RelativePath": "api/Address/UpdateAddress/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateAddressDto",
+        "Type": "Weixin_Project.DTOs.UpdateAddressRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/AdminOrder/GetOrderById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.OrderViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
+    "Method": "GetOrders",
+    "RelativePath": "api/AdminOrder/GetOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "orderNumber",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.OrderViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
+    "Method": "GetOrderStatuses",
+    "RelativePath": "api/AdminOrder/GetOrderStatuses/Statuses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
+    "Method": "UpdateOrderStatus",
+    "RelativePath": "api/AdminOrder/UpdateOrderStatus/{id}/UpdateStatus",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateStatusDto",
+        "Type": "Weixin_Project.DTOs.UpdateOrderStatusRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "api/AdminProduct/CreateProduct",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createProductDto",
+        "Type": "Weixin_Project.DTOs.CreateProductRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
+    "Method": "DeleteProduct",
+    "RelativePath": "api/AdminProduct/DeleteProduct/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
     "Method": "GetAllProducts",
-    "RelativePath": "api/Admin/GetAllProducts",
+    "RelativePath": "api/AdminProduct/GetAllProducts",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -50,12 +278,22 @@
         "IsRequired": false
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
-    "Method": "GetProduct",
-    "RelativePath": "api/Admin/GetProduct",
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
+    "Method": "GetProductById",
+    "RelativePath": "api/AdminProduct/GetProductById/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -63,15 +301,25 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
-    "ReturnTypes": []
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.ProductViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
     "Method": "RestoreProduct",
-    "RelativePath": "api/Admin/RestoreProduct",
+    "RelativePath": "api/AdminProduct/RestoreProduct/Restore/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -79,15 +327,15 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Weixin_Project.Controllers.AdminController",
+    "ContainingType": "Weixin_Project.Controllers.AdminProductController",
     "Method": "UpdateProduct",
-    "RelativePath": "api/Admin/UpdateProduct",
+    "RelativePath": "api/AdminProduct/UpdateProduct/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -95,11 +343,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
-        "Name": "updatedProduct",
-        "Type": "Weixin_Project.AddProductRequest",
+        "Name": "updatedProductDto",
+        "Type": "Weixin_Project.DTOs.UpdateProductRequestDto",
         "IsRequired": true
       }
     ],
@@ -115,7 +363,7 @@
     "Parameters": [
       {
         "Name": "loginRequest",
-        "Type": "Weixin_Project.LoginRequest",
+        "Type": "Weixin_Project.DTOs.LoginRequestDto",
         "IsRequired": true
       }
     ],
@@ -131,10 +379,294 @@
     "Parameters": [
       {
         "Name": "registerRequest",
-        "Type": "Weixin_Project.RegisterRequest",
+        "Type": "Weixin_Project.DTOs.RegisterRequestDto",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "AddItemToCart",
+    "RelativePath": "api/Cart/AddItemToCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addToCartDto",
+        "Type": "Weixin_Project.DTOs.AddToCartRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.CartViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "ClearMyCart",
+    "RelativePath": "api/Cart/ClearMyCart/Clear",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "GetMyCart",
+    "RelativePath": "api/Cart/GetMyCart",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.CartViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "RemoveItemFromCart",
+    "RelativePath": "api/Cart/RemoveItemFromCart/{cartItemId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cartItemId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.CartViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "UpdateItemQuantity",
+    "RelativePath": "api/Cart/UpdateItemQuantity",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "updateDto",
+        "Type": "Weixin_Project.DTOs.UpdateCartItemQuantityRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.CartViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.OrderController",
+    "Method": "CancelMyOrder",
+    "RelativePath": "api/Order/CancelMyOrder/{id}/Cancel",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.OrderController",
+    "Method": "CreateOrder",
+    "RelativePath": "api/Order/CreateOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "createOrderDto",
+        "Type": "Weixin_Project.DTOs.CreateOrderRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.OrderViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.OrderController",
+    "Method": "GetMyOrders",
+    "RelativePath": "api/Order/GetMyOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.UserOrderListItemViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.OrderController",
+    "Method": "GetUserOrderById",
+    "RelativePath": "api/Order/GetUserOrderById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.OrderViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.ProductController",
+    "Method": "GetProductById",
+    "RelativePath": "api/Product/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.ProductViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.ProductController",
+    "Method": "GetProducts",
+    "RelativePath": "api/Product/List",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortBy",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "sortAsc",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

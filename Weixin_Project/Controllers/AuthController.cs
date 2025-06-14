@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Weixin_Project.DTOs;
 
 namespace Weixin_Project.Controllers
 {
@@ -24,7 +25,7 @@ namespace Weixin_Project.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequest)
         {
             try
             {
@@ -61,7 +62,7 @@ namespace Weixin_Project.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register([FromBody] RegisterRequest registerRequest)
+        public async Task<IActionResult> Register([FromBody] RegisterRequestDto registerRequest)
         {
             try
             {

@@ -3,12 +3,40 @@
     "pages/login/login",
     "pages/register/register",
     "pages/products/products",
-    "pages/admin/admin"
+    "pages/admin/admin",
+    "pages/cart/cart",
+    "pages/profile/profile"
   ],
   "window": {
     "navigationBarTitleText": "网上商城",
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#1989fa",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/products/products",
+        "text": "首页",
+        "iconPath": "images/tabs/home.png",
+        "selectedIconPath": "images/tabs/home.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/tabs/cart.png",
+        "selectedIconPath": "images/tabs/cart.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabs/profile.png",
+        "selectedIconPath": "images/tabs/profile.png"
+      }
+    ]
   },
   "style": "v2",
   "rendererOptions": {

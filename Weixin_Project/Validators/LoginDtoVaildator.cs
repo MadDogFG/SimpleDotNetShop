@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
+using Weixin_Project.DTOs;
 
-namespace Weixin_Project
+namespace Weixin_Project.Validators
 {
-    public class LoginVaildator : AbstractValidator<LoginRequest>
+    public class LoginDtoVaildator : AbstractValidator<LoginRequestDto>
     {
-        public LoginVaildator()
+        public LoginDtoVaildator()
         {
             RuleFor(x => x.Username).NotEmpty().WithMessage("请输入名字");
             RuleFor(x => x.Password).NotEmpty().WithMessage("请输入密码");

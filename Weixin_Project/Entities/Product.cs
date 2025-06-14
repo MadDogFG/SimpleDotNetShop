@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Weixin_Project
+namespace Weixin_Project.Entities
 {
     public class Product
     {
