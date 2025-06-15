@@ -1,0 +1,147 @@
+<view class="container order-list-page">
+  <!-- 筛选/Tab栏 (可选) -->
+  <view class="order-tabs" wx:if="{{tabList.length > 1}}"> <!-- 如果只有一个tab（例如“全部”）就不显示 -->
+    <view wx:for="{{tabList}}" wx:key="statusValue"
+          class="tab-item {{currentFilterStatus === item.statusValue ? 'active' : ''}}"
+          bindtap="onTabClick" data-status="{{item.statusValue}}">
+      {{item.name}}
+    </view>
+  </view>
+
+  <block wx:if="{{loading && orders.length === 0}}">
+    <view class="loading-placeholder">
+      <view class="loading-spinner-local"></view>
+      <text>加载订单中...</text>
+    </view>
+  </block>
+  <block wx:elif="{{!loading && orders.length === 0 && !networkError}}">
+    <view class="empty-orders">
+      <image class="empty-icon" src="/images/empty-order.png" mode="aspectFit" />
+      <text class="empty-text">您还没有相关订单哦～</text>
+      <button class="go-shopping-btn-order" bindtap="goShopping">去逛逛</button>
+    </view>
+  </block>
+  <block wx:elif="{{networkError}}">
+      <view class="empty-orders">
+          <image class="empty-icon" src="/images/network-error.png" mode="aspectFit" />
+          <text class="empty-text">网络开小差了</text>
+          <button class="retry-btn-order" bindtap="loadUserOrders" data-refresh="true">点击重试</button>
+      </view>
+  </block>
+  <block wx:else>
+    <scroll-view scroll-y class="order-scroll-list" bindscrolltolower="loadMoreOrders" style="height: {{scrollViewHeight}}px;" scroll-top="{{scrollTop}}" bindscroll="onPageScroll">
+      <view wx:for="{{orders}}" wx:key="id" class="order-card {{item.id === highlightedOrderId ? 'highlighted' : ''}}" bindtap="openOrderDetailModal" data-orderid="{{item.id}}">
+        <view class="order-card-header">
+          <text class="order-id">订单号: {{item.id}}</text>
+          <text class="order-status {{item.status.toLowerCase()}}">{{item.statusText}}</text>
+        </view>
+        <view class="order-card-body">
+          <view class="order-product-preview" wx:if="{{item.firstProductName}}">
+            <image class="preview-image" src="{{'/images/'+item.firstProductImageUrl || '/images/default-product.png'}}" mode="aspectFill"/>
+            <view class="preview-info">
+              <text class="preview-name">{{item.firstProductName}}</text>
+              <text class="preview-count" wx:if="{{item.totalItemsCount > 1}}">等{{item.totalItemsCount}}件商品</text>
+            </view>
+          </view>
+          <view wx:else class="preview-info">订单商品详情</view> <!-- 备用文本 -->
+        </view>
+        <view class="order-card-footer">
+          <text class="order-date">下单时间: {{item.orderDateFormatted}}</text>
+          <view class="order-total-amount">实付款: <text class="amount-value">¥{{item.totalAmount}}</text></view>
+        </view>
+        <view class="order-actions" wx:if="{{(item.status === 0) && !item.actionLoading}}">
+            <button class="action-button cancel-btn" size="mini" catchtap="handleOrderAction" data-action="cancel" data-orderid="{{item.id}}">取消订单</button>
+        </view>
+        <view class="order-actions" wx:if="{{item.status === 1 && !item.actionLoading}}">
+            <button class="action-button confirm-receipt-btn" size="mini" catchtap="handleOrderAction" data-action="confirmReceipt" data-orderid="{{item.id}}">确认收货</button>
+        </view>
+        <view class="loading-spinner-action" wx:if="{{item.actionLoading}}"></view>
+      </view>
+      <view class="load-more-indicator" wx:if="{{isLoadingMore && orders.length > 0}}">
+        <view class="loading-spinner-local small"></view>
+        <text>加载中...</text>
+      </view>
+      <view class="load-more-indicator" wx:if="{{!isLoadingMore && !hasMoreData && orders.length > 0}}">
+        <text>没有更多订单了</text>
+      </view>
+      <button class="go-shopping-btn-order" bindtap="goShopping">去逛逛</button>
+    </scroll-view>
+  </block>
+
+  <!-- 订单详情弹窗 -->
+  <view class="modal-overlay-global" wx:if="{{showOrderDetailModal}}" catchtouchmove="preventTouchMove" bindtap="onDetailOverlayTap">
+    <view class="order-detail-modal-content" catchtap="preventDetailContentTap">
+      <view class="order-detail-modal-header">
+        <text class="modal-title-text">订单详情</text>
+        <image src="/images/close.png" class="close-icon-global" bindtap="closeOrderDetailModal" />
+      </view>
+
+      <block wx:if="{{orderDetailLoading}}">
+        <view class="loading-placeholder-modal" style="height: 60vh;">
+          <view class="loading-spinner-local"></view>
+          <text>加载详情中...</text>
+        </view>
+      </block>
+      <block wx:elif="{{currentOrderDetail}}">
+        <scroll-view scroll-y class="order-detail-modal-body">
+          <view class="status-section-modal section-card-modal">
+            <view class="status-text-modal {{currentOrderDetail.status.toLowerCase()}}">{{currentOrderDetail.statusText}}</view>
+            <view class="status-desc-modal" wx:if="{{currentOrderDetail.status === 'Paid'}}">商家正在努力备货中...</view>
+            <view class="status-desc-modal" wx:if="{{currentOrderDetail.status === 'Shipped'}}">您的订单已发货，请注意查收！</view>
+          </view>
+
+          <view class="address-section-modal section-card-modal" wx:if="{{currentOrderDetail.shippingAddress}}">
+            <view class="section-icon-title-modal"><image class="icon-modal" src="/images/icons/location-fill.png"/> <text>收货信息</text></view>
+            <view class="address-content-modal">
+              <text class="name-phone-modal">{{currentOrderDetail.shippingAddress.contactName}}  {{currentOrderDetail.shippingAddress.phoneNumber}}</text>
+              <text class="full-address-modal">{{currentOrderDetail.shippingAddress.fullAddress}}</text>
+            </view>
+          </view>
+
+          <view class="product-list-section-modal section-card-modal">
+            <view class="section-icon-title-modal"><image class="icon-modal" src="/images/icons/goods-fill.png"/> <text>商品列表 (共{{currentOrderDetail.orderItems.length}}件)</text></view>
+            <view wx:for="{{currentOrderDetail.orderItems}}" wx:key="productId" wx:for-item="productItem" class="product-item-modal">
+              <image class="product-image-modal" src="{{'/images/'+productItem.productImageUrl || '/images/default-product.png'}}" mode="aspectFill"/>
+              <view class="product-info-modal">
+                <text class="product-name-modal">{{productItem.productName}}</text>
+              </view>
+              <view class="price-quantity-modal">
+                <text class="product-price-modal">¥{{productItem.unitPrice}}</text>
+                <text class="product-quantity-modal">x {{productItem.quantity}}</text>
+              </view>
+            </view>
+          </view>
+
+          <view class="order-info-section-modal section-card-modal">
+            <view class="section-icon-title-modal"><image class="icon-modal" src="/images/icons/info-fill.png"/> <text>订单信息</text></view>
+            <view class="info-item-modal"><text class="label-modal">订单编号：</text><text class="value-modal" selectable="{{true}}">{{currentOrderDetail.id}}</text></view>
+            <view class="info-item-modal"><text class="label-modal">下单时间：</text><text class="value-modal">{{currentOrderDetail.orderDateFormatted}}</text></view>
+            <view class="info-item-modal" wx:if="{{currentOrderDetail.notes}}"><text class="label-modal">订单备注：</text><text class="value-modal">{{currentOrderDetail.notes}}</text></view>
+          </view>
+
+          <view class="amount-summary-section-modal section-card-modal">
+            <view class="summary-line-modal"><text>商品总额</text><text>¥{{currentOrderDetail.productTotalAmount ? currentOrderDetail.productTotalAmount : '0.00'}}</text></view>
+            <view class="summary-line-modal" wx:if="{{currentOrderDetail.shippingFee > 0}}"><text>运费</text><text>+ ¥{{currentOrderDetail.shippingFee}}</text></view>
+            <view class="summary-line-modal total"><text>实付款</text><text class="final-value-modal">¥{{currentOrderDetail.totalAmount}}</text></view>
+          </view>
+        </scroll-view>
+      </block>
+      <block wx:elif="{{!orderDetailLoading && !networkErrorOrderDetail}}">
+          <view class="empty-orders-in-modal">无法加载订单详情</view>
+      </block>
+       <block wx:elif="{{networkErrorOrderDetail}}">
+          <view class="empty-orders-in-modal">
+              <text>网络请求失败</text>
+              <button size="mini" style="margin-top:20rpx;" bindtap="retryLoadOrderDetail">重试</button>
+          </view>
+      </block>
+
+      <view class="order-detail-modal-footer" wx:if="{{currentOrderDetail && !orderDetailLoading}}">
+         <button class="modal-btn-global secondary-btn-global" style="flex:1;" wx:if="{{(currentOrderDetail.status === 'Paid' || currentOrderDetail.status === 'Pending') && !currentOrderDetail.actionLoading}}" catchtap="handleOrderActionInModal" data-action="cancel" data-orderid="{{currentOrderDetail.id}}">取消订单</button>
+         <button class="modal-btn-global primary-btn-global" style="flex:1;" wx:if="{{currentOrderDetail.status === 'Shipped' && !currentOrderDetail.actionLoading}}" catchtap="handleOrderActionInModal" data-action="confirmReceipt" data-orderid="{{currentOrderDetail.id}}">确认收货</button>
+         <view class="loading-spinner-action-modal" wx:if="{{currentOrderDetail.actionLoading}}"></view>
+         <button class="modal-btn-global" style="flex:1;" bindtap="closeOrderDetailModal" wx:if="{{!((currentOrderDetail.status === 'Paid' || currentOrderDetail.status === 'Pending') || currentOrderDetail.status === 'Shipped') || currentOrderDetail.actionLoading}}">关闭</button>
+      </view>
+    </view>
+  </view>
+</view>

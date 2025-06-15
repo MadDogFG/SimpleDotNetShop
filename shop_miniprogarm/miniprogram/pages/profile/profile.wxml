@@ -1,2 +1,139 @@
-<!--pages/profile.wxml-->
-<text>pages/profile.wxml</text>
+<view class="container profile-page">
+  <!-- 用户信息区域 -->
+  <view class="user-info-section">
+    <text class="username">{{userInfo.username || '未登录'}}</text>
+    <view class="role-tag" wx:if="{{userInfo.roles && userInfo.roles.length > 0}}">
+      {{userInfo.roles.includes('Admin') ? '管理员' : (userInfo.roles.includes('User') ? '普通用户' : userInfo.roles[0])}}
+    </view>
+  </view>
+
+  <!-- 功能列表 -->
+  <view class="menu-list">
+    <view class="menu-item" bindtap="navigateToOrders">
+      <image class="menu-icon" src="/images/icons/order.png" /> <!-- 确保有此图标 -->
+      <text class="menu-text">我的订单</text>
+      <image class="arrow-icon" src="/images/icons/arrow-right.png" />
+    </view>
+
+    <view class="menu-item" bindtap="openAddressModal">
+      <image class="menu-icon" src="/images/icons/address.png" /> <!-- 确保有此图标 -->
+      <text class="menu-text">地址管理</text>
+      <image class="arrow-icon" src="/images/icons/arrow-right.png" />
+    </view>
+
+    <!-- 更多功能项可以加在这里 -->
+    <!-- <view class="menu-item">
+      <image class="menu-icon" src="/images/icons/coupon.png" />
+      <text class="menu-text">我的优惠券</text>
+      <image class="arrow-icon" src="/images/icons/arrow-right.png" />
+    </view> -->
+  </view>
+
+  <!-- 退出登录按钮 -->
+  <view class="logout-btn-container" wx:if="{{isLoggedIn}}">
+    <button class="logout-btn" bindtap="logout">退出登录</button>
+  </view>
+  <view class="login-prompt-container" wx:else>
+      <button class="login-prompt-btn" bindtap="navigateToLogin">点击登录</button>
+  </view>
+
+
+  <!-- 地址管理弹窗 -->
+  <view class="modal-overlay-global" wx:if="{{showAddressModal}}" catchtouchmove="preventTouchMove">
+    <view class="address-modal-content">
+      <view class="address-modal-header">
+        <text class="modal-title-text">{{isEditingAddress ? '编辑地址' : (isAddingAddress ? '新增地址' : '选择地址')}}</text>
+        <image src="/images/close.png" class="close-icon-global" bindtap="closeAddressModal" />
+      </view>
+
+      <!-- 地址列表视图 -->
+      <scroll-view scroll-y class="address-list-in-modal" wx:if="{{!isEditingAddress && !isAddingAddress}}">
+        <block wx:if="{{addresses.length === 0 && !addressLoading}}">
+          <view class="empty-address-in-modal">暂无收货地址，请先添加</view>
+        </block>
+        <view wx:for="{{addresses}}" wx:key="id"
+              class="address-item-in-modal {{item.isDefault ? 'default' : ''}} {{fromCheckout && selectedAddressForCheckout && selectedAddressForCheckout.id === item.id ? 'checkout-selected' : ''}}"
+              bindtap="handleAddressItemTap" data-address="{{item}}">
+          <view class="address-item-info">
+            <view class="contact-row">
+              <text class="contact-name">{{item.contactName}}</text>
+              <text class="contact-phone">{{item.phoneNumber}}</text>
+            </view>
+            <view class="address-detail">
+              <text wx:if="{{item.isDefault}}" class="default-tag">[默认]</text>
+              {{item.fullAddress}}
+            </view>
+          </view>
+          <view class="address-item-actions">
+            <text class="action-btn-modal edit" catchtap="startEditAddress" data-address="{{item}}">编辑</text>
+            <text class="action-btn-modal delete" catchtap="confirmDeleteAddressModal" data-id="{{item.id}}" data-name="{{item.contactName}}">删除</text>
+          </view>
+        </view>
+        <view wx:if="{{addressLoading}}" class="loading-placeholder-modal">加载中...</view>
+      </scroll-view>
+
+      <!-- 地址表单视图 (新增/编辑) -->
+      <scroll-view scroll-y class="address-form-in-modal" wx:if="{{isEditingAddress || isAddingAddress}}">
+        <view class="form-item-modal">
+          <text class="form-label-modal">联系人</text>
+          <input class="form-input-modal" placeholder="请输入收货人姓名" value="{{addressFormData.contactName}}" bindinput="handleAddressFormInput" data-field="contactName" />
+        </view>
+        <view class="form-item-modal">
+          <text class="form-label-modal">手机号</text>
+          <input class="form-input-modal" type="number" placeholder="请输入手机号码" value="{{addressFormData.phoneNumber}}" bindinput="handleAddressFormInput" data-field="phoneNumber" maxlength="11"/>
+        </view>
+        <view class="form-item-modal">
+          <text class="form-label-modal">所在地区</text>
+          <!-- 这里可以使用微信小程序的地区选择器 picker mode="region" -->
+          <picker mode="region" bindchange="onRegionChange" value="{{region}}" custom-item="{{customItem}}">
+            <view class="picker-input-modal {{region[0] === '请选择' ? 'placeholder' : ''}}">
+              {{region[0] === '请选择' ? '请选择省市区' : region[0] + ' ' + region[1] + ' ' + region[2]}}
+            </view>
+          </picker>
+        </view>
+        <view class="form-item-modal">
+          <text class="form-label-modal">详细地址</text>
+          <textarea class="form-textarea-modal" placeholder="街道、楼牌号等" value="{{addressFormData.streetAddress}}" bindinput="handleAddressFormInput" data-field="streetAddress" auto-height />
+        </view>
+        <view class="form-item-modal">
+          <text class="form-label-modal">邮政编码 (可选)</text>
+          <input class="form-input-modal" type="number" placeholder="请输入邮政编码" value="{{addressFormData.postalCode}}" bindinput="handleAddressFormInput" data-field="postalCode" maxlength="6"/>
+        </view>
+        <view class="form-item-modal default-setting-row">
+          <text class="form-label-modal">设为默认地址</text>
+          <switch checked="{{addressFormData.isDefault}}" bindchange="handleAddressFormSwitch" data-field="isDefault" color="#1989fa"/>
+        </view>
+      </scroll-view>
+
+      <view class="address-modal-footer">
+        <block wx:if="{{!isEditingAddress && !isAddingAddress}}">
+            <!-- 地址列表状态下的按钮 -->
+            <button class="modal-btn-global primary-btn-global" bindtap="startAddAddress" style="margin-right: 20rpx; flex: 1;">
+                + 添加新地址
+            </button>
+            <button class="modal-btn-global secondary-btn-global" bindtap="closeAddressModal" style="flex: 1;">
+                {{fromCheckout ? '取消选择' : '关闭'}}
+            </button>
+        </block>
+        <block wx:else> <!-- 新增或编辑表单的按钮 -->
+            <button class="modal-btn-global secondary-btn-global" bindtap="cancelAddressForm">取消</button>
+            <button class="modal-btn-global primary-btn-global" bindtap="saveAddress" disabled="{{savingAddress}}">
+                {{savingAddress ? '保存中...' : '保存地址'}}
+            </button>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- 删除确认弹窗 (用于地址删除) -->
+  <view wx:if="{{showDeleteAddressConfirmModal}}" class="delete-confirm-overlay-global">
+      <view class="delete-confirm-dialog-global">
+        <text class="delete-confirm-text-global">确定要删除收货人 "{{addressToDelete.name}}" 的地址吗?</text>
+        <view class="confirm-buttons-global">
+          <button class="dialog-btn-global cancel-btn-global" bindtap="cancelDeleteAddressModal">取消</button>
+          <button class="dialog-btn-global confirm-btn-global delete-action-btn-global" bindtap="executeDeleteAddress" disabled="{{deletingAddress}}">删除</button>
+        </view>
+      </view>
+  </view>
+
+</view>

@@ -1,1 +1,306 @@
-/* pages/profile.wxss */
+/* pages/profile/profile.wxss */
+.profile-page {
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+.user-info-section {
+  background-color: #1989fa; /* 主题色背景 */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60rpx 0;
+  margin-bottom: 20rpx;
+}
+
+.username {
+  line-height: 150rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+.role-tag {
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 22rpx;
+  padding: 6rpx 15rpx;
+  border-radius: 20rpx;
+}
+
+.menu-list {
+  background-color: #fff;
+  border-radius: 16rpx;
+  margin: 0 20rpx 30rpx 20rpx;
+  overflow: hidden; /* 配合border-radius */
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+.menu-item:last-child {
+  border-bottom: none;
+}
+.menu-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 25rpx;
+}
+.menu-text {
+  flex-grow: 1;
+}
+.arrow-icon {
+  width: 28rpx;
+  height: 28rpx;
+  opacity: 0.5;
+}
+
+.logout-btn-container, .login-prompt-container {
+  padding: 0 30rpx;
+  margin-top: 50rpx;
+}
+.logout-btn, .login-prompt-btn {
+  background-color: #ff4d4f; /* 红色退出按钮 */
+  color: white;
+  font-size: 32rpx;
+  border-radius: 40rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+.login-prompt-btn {
+    background-color: #1989fa; /* 蓝色登录按钮 */
+}
+
+
+/* --- 地址管理弹窗样式 --- */
+.modal-overlay-global { /* 通用遮罩层 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998; /* 比删除确认低一点，如果需要嵌套 */
+}
+
+.address-modal-content {
+  width: 90%;
+  max-width: 700rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh; /* 限制最大高度 */
+  overflow: hidden; /* 防止内容溢出圆角 */
+}
+
+.address-modal-header {
+  padding: 30rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  border-bottom: 1rpx solid #f0f0f0;
+  position: relative;
+}
+.modal-title-text {
+  /* 标题文字 */
+}
+.close-icon-global { /* 通用关闭图标 */
+  position: absolute;
+  right: 30rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30rpx; /* 稍微大一点 */
+  height: 30rpx;
+  padding: 10rpx; /* 增大点击区域 */
+}
+
+.address-list-in-modal, .address-form-in-modal {
+  padding: 0 30rpx;
+  max-height: calc(85vh - 100rpx - 120rpx); /* 减去头部和底部高度 */
+  overflow-y: auto;
+  flex-grow: 1;
+}
+.empty-address-in-modal {
+  text-align: center;
+  color: #999;
+  padding: 80rpx 0;
+  font-size: 28rpx;
+}
+.loading-placeholder-modal {
+  text-align: center;
+  color: #999;
+  padding: 50rpx 0;
+}
+
+
+.address-item-in-modal {
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.address-item-in-modal:last-child {
+  border-bottom: none;
+}
+.address-item-in-modal.default .default-tag {
+  color: #1989fa;
+  border-color: #1989fa;
+}
+.address-item-in-modal.checkout-selected {
+  background-color: #e6f7ff; /* 结算页选中项的背景色 */
+}
+
+.address-item-info {
+  flex-grow: 1;
+  margin-right: 20rpx;
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+.contact-name {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+  margin-right: 20rpx;
+}
+.contact-phone {
+  font-size: 28rpx;
+  color: #666;
+}
+.address-detail {
+  font-size: 26rpx;
+  color: #888;
+  line-height: 1.5;
+}
+.default-tag {
+  font-size: 22rpx;
+  color: #ff9800; /* 默认标签颜色 */
+  border: 1rpx solid #ff9800;
+  padding: 2rpx 8rpx;
+  border-radius: 6rpx;
+  margin-right: 10rpx;
+  display: inline-block; /* 确保padding生效 */
+}
+
+.address-item-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.action-btn-modal {
+  font-size: 26rpx;
+  padding: 10rpx 15rpx;
+  margin-left: 20rpx;
+}
+.action-btn-modal.edit {
+  color: #1989fa;
+}
+.action-btn-modal.delete {
+  color: #ff4d4f;
+}
+
+/* 地址表单样式 */
+.form-item-modal {
+  margin-bottom: 25rpx;
+}
+.form-label-modal {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+  display: block;
+}
+.form-input-modal, .picker-input-modal, .form-textarea-modal {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 20rpx;
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+.picker-input-modal {
+  display: flex; /* 使文字垂直居中 */
+  align-items: center;
+}
+.picker-input-modal.placeholder {
+    color: #999;
+}
+.form-textarea-modal {
+  height: auto; /* 自适应高度 */
+  min-height: 120rpx;
+  padding: 20rpx;
+  line-height: 1.5;
+}
+.default-setting-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.address-modal-footer {
+  padding: 20rpx 30rpx;
+  border-top: 1rpx solid #f0f0f0;
+  display: flex;
+  justify-content: space-between; /* 当有两个按钮时 */
+}
+.modal-btn-global { /* 通用模态框按钮 */
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 40rpx;
+  font-size: 30rpx;
+  text-align: center;
+  flex-grow: 1; /* 按钮平分空间 */
+  margin: 0 10rpx;
+}
+.modal-btn-global.primary-btn-global {
+  background-color: #1989fa;
+  color: white;
+}
+.modal-btn-global.secondary-btn-global {
+  background-color: #f0f0f0;
+  color: #555;
+}
+.modal-btn-global[disabled] {
+  opacity: 0.6;
+}
+.full-width-btn {
+    margin: 0; /* 单个按钮时占满 */
+}
+
+/* 删除确认弹窗 (全局样式，如果需要与其他弹窗区分开) */
+.delete-confirm-overlay-global {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.4); display: flex;
+  justify-content: center; align-items: center; z-index: 999;
+}
+.delete-confirm-dialog-global {
+  background-color: white; padding: 40rpx; border-radius: 16rpx;
+  width: 80%; max-width: 600rpx; text-align: center;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.1);
+}
+.delete-confirm-text-global {
+  font-size: 30rpx; color: #333; margin-bottom: 40rpx; display: block; line-height: 1.5;
+}
+.confirm-buttons-global {
+  display: flex; justify-content: space-between;
+}
+.dialog-btn-global {
+  flex: 1; height: 70rpx; line-height: 70rpx; border-radius: 35rpx; font-size: 28rpx; margin: 0 10rpx;
+}
+.cancel-btn-global { background-color: #f0f0f0; color: #555; }
+.delete-action-btn-global { background-color: #ff4d4f; color: white; }
+.dialog-btn-global[disabled] { opacity: 0.6; }

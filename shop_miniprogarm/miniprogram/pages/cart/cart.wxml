@@ -45,7 +45,7 @@
         <text>全选</text>
       </view>
       <view class="total-summary">
-        <view class="total-amount">合计: <text class="amount-value">¥{{selectedTotalAmount.toFixed(2)}}</text></view>
+        <view class="total-amount">合计: <text class="amount-value">¥{{selectedTotalAmount}}</text></view>
         <text class="total-items-text" wx:if="{{selectedItemsCount > 0}}">共{{selectedItemsCount}}件</text>
       </view>
       <button class="checkout-btn {{selectedItemsCount === 0 ? 'disabled' : ''}}" bindtap="goToCheckout" disabled="{{selectedItemsCount === 0}}">

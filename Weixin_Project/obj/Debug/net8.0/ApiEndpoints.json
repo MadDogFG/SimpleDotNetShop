@@ -496,7 +496,7 @@
   {
     "ContainingType": "Weixin_Project.Controllers.OrderController",
     "Method": "CancelMyOrder",
-    "RelativePath": "api/Order/CancelMyOrder/{id}/Cancel",
+    "RelativePath": "api/Order/CancelMyOrder/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

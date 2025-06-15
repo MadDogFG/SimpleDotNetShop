@@ -5,7 +5,9 @@
     "pages/products/products",
     "pages/admin/admin",
     "pages/cart/cart",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/checkout/checkout",
+    "pages/orders/orders"
   ],
   "window": {
     "navigationBarTitleText": "网上商城",

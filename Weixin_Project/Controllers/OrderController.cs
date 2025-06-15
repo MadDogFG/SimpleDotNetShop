@@ -226,7 +226,7 @@ namespace Weixin_Project.Controllers
         }
 
         // 用户取消自己的订单 (仅在特定状态下允许, 例如 Pending 或 Paid)
-        [HttpPut("{id}/Cancel")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> CancelMyOrder(int id)
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -284,6 +284,36 @@ namespace Weixin_Project.Controllers
                     return StatusCode(500, new { message = "取消订单时发生内部错误。" });
                 }
             }
+        }
+
+        [HttpPut("{id}/ConfirmReceipt")]
+        public async Task<IActionResult> ConfirmReceipt(int id)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized(new { message = "无法获取用户信息。" });
+            }
+
+            var order = await _dbContext.Orders
+                                .FirstOrDefaultAsync(o => o.Id == id && o.UserId == userId);
+
+            if (order == null)
+            {
+                return NotFound(new { message = "订单不存在或您无权操作。" });
+            }
+
+            if (order.Status != OrderStatus.Shipped)
+            {
+                return BadRequest(new { message = $"订单状态为 {order.Status.ToString()}，无法确认收货。" });
+            }
+
+            order.Status = OrderStatus.Completed;
+            _dbContext.Orders.Update(order);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok(new { message = "确认收货成功！订单已完成。" });
+            // 或者 return NoContent();
         }
 
 
