@@ -186,7 +186,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.OrderViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Weixin_Project.Utils.PagedResponse\u00601[[Weixin_Project.DTOs.OrderViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -199,7 +199,7 @@
   {
     "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
     "Method": "GetOrderStatuses",
-    "RelativePath": "api/AdminOrder/GetOrderStatuses/Statuses",
+    "RelativePath": "api/AdminOrder/GetOrderStatuses",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -209,7 +209,7 @@
   {
     "ContainingType": "Weixin_Project.Controllers.AdminOrderController",
     "Method": "UpdateOrderStatus",
-    "RelativePath": "api/AdminOrder/UpdateOrderStatus/{id}/UpdateStatus",
+    "RelativePath": "api/AdminOrder/UpdateOrderStatus/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -280,7 +280,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Weixin_Project.Utils.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -319,7 +319,7 @@
   {
     "ContainingType": "Weixin_Project.Controllers.AdminProductController",
     "Method": "RestoreProduct",
-    "RelativePath": "api/AdminProduct/RestoreProduct/Restore/{id}",
+    "RelativePath": "api/AdminProduct/RestoreProduct/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -469,6 +469,32 @@
   },
   {
     "ContainingType": "Weixin_Project.Controllers.CartController",
+    "Method": "RemoveMultipleItemsFromCart",
+    "RelativePath": "api/Cart/RemoveMultipleItemsFromCart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "removeDto",
+        "Type": "Weixin_Project.DTOs.RemoveCartItemsRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.CartViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.CartController",
     "Method": "UpdateItemQuantity",
     "RelativePath": "api/Cart/UpdateItemQuantity",
     "HttpMethod": "PUT",
@@ -497,6 +523,22 @@
     "ContainingType": "Weixin_Project.Controllers.OrderController",
     "Method": "CancelMyOrder",
     "RelativePath": "api/Order/CancelMyOrder/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.OrderController",
+    "Method": "ConfirmReceipt",
+    "RelativePath": "api/Order/ConfirmReceipt/{id}/ConfirmReceipt",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -561,7 +603,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.UserOrderListItemViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Weixin_Project.Utils.PagedResponse\u00601[[Weixin_Project.DTOs.UserOrderListItemViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -659,7 +701,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Weixin_Project.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "Weixin_Project.Utils.PagedResponse\u00601[[Weixin_Project.DTOs.ProductViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

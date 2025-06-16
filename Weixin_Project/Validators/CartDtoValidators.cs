@@ -44,4 +44,19 @@ namespace Weixin_Project.Validators
                 .GreaterThan(0).WithMessage("无效的购物车项ID。");
         }
     }
+
+    // 新增：批量删除购物车项请求的验证器
+    public class RemoveCartItemsRequestDtoValidator : AbstractValidator<RemoveCartItemsRequestDto>
+    {
+        public RemoveCartItemsRequestDtoValidator()
+        {
+            RuleFor(x => x.CartItemIds)
+                .NotNull().WithMessage("购物车项ID列表不能为null。")
+                .NotEmpty().WithMessage("购物车项ID列表不能为空。");
+
+            RuleForEach(x => x.CartItemIds)
+                .GreaterThan(0).WithMessage("购物车项ID必须是有效的正整数。");
+        }
+    }
+
 }

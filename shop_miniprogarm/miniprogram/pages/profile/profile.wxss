@@ -70,7 +70,7 @@
   font-size: 32rpx;
   border-radius: 40rpx;
   height: 88rpx;
-  line-height: 88rpx;
+  line-height: center;
 }
 .login-prompt-btn {
     background-color: #1989fa; /* 蓝色登录按钮 */
@@ -111,9 +111,7 @@
   border-bottom: 1rpx solid #f0f0f0;
   position: relative;
 }
-.modal-title-text {
-  /* 标题文字 */
-}
+
 .close-icon-global { /* 通用关闭图标 */
   position: absolute;
   right: 30rpx;

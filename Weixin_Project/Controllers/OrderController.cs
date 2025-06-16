@@ -9,6 +9,7 @@ using System.Security.Claims; // 用于获取UserId
 using System.Threading.Tasks;
 using Weixin_Project.DTOs;
 using Weixin_Project.Entities;
+using Weixin_Project.Utils;
 
 namespace Weixin_Project.Controllers
 {

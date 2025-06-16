@@ -218,17 +218,45 @@ Page({
 
   // 清理购物车中已下单的商品
   async clearOrderedItemsFromCart(orderedItems) {
-      const token = wx.getStorageSync('token');
-      if (!token || !orderedItems || orderedItems.length === 0) return;
+    const token = wx.getStorageSync('token');
+    if (!token || !orderedItems || orderedItems.length === 0) return;
 
-      // 后端 CartController 没有提供批量删除接口，可以逐个删除或前端自行更新购物车缓存
-      // 简单起见，这里可以不调用后端，因为用户下单后，购物车体验上这些商品就没了。
-      // 如果需要严格同步后端购物车，则需要后端支持批量移除，或者前端多次调用RemoveItemFromCart
-      // 或者，更简单的是，下单成功后，直接调用一次 GetMyCart 刷新整个购物车数据。
-      // 这里采用“不主动调用后端删除，下次进入购物车时会刷新”的策略，或依赖GetMyCart刷新。
-      console.log("订单创建成功，以下商品理论上应从购物车移除（或标记）：", orderedItems.map(i => i.productId));
-      
-      // 也可以考虑在App.js中设置一个全局标志，让购物车页面在onShow时强制刷新。
-      getApp().globalData.cartNeedRefresh = true;
-  }
+    console.log("订单创建成功，以下商品理论上应从购物车移除（或标记）：",
+      orderedItems.map(i => `ProductId: ${i.productId}, CartItemId: ${i.cartItemId}`));
+
+    // 从 orderedItems (即 checkoutItems，它们是 CartItemViewModel) 中提取 cartItemId
+    const cartItemIdsToRemove = orderedItems.map(item => item.cartItemId).filter(id => id != null);
+
+    if (cartItemIdsToRemove.length > 0) {
+      wx.request({
+        url: `${API_BASE_URL}/Cart/RemoveMultipleItemsFromCart`,
+        method: 'POST', // 使用 POST 方法
+        header: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        },
+        data: {
+          cartItemIds: cartItemIdsToRemove // 发送 CartItemId 列表
+        },
+        success: (res) => {
+          if (res.statusCode === 200) {
+            console.log('成功批量移除已下单商品:', res.data);
+            getApp().globalData.cartNeedRefresh = true; // 标记购物车需要刷新
+          } else {
+            console.error('批量移除购物车商品失败:', res.data);
+            wx.showToast({ title: `移除失败: ${res.data.message || res.statusCode}`, icon: 'none' });
+          }
+        },
+        fail: (err) => {
+          console.error('批量移除购物车商品网络请求失败:', err);
+          wx.showToast({ title: '网络错误，批量移除失败', icon: 'none' });
+        }
+      });
+    } else {
+      console.log("没有需要从购物车中移除的商品项。");
+    }
+
+    // 即使没有具体商品要移除，也可能需要刷新购物车状态（例如，清空购物车后）
+    getApp().globalData.cartNeedRefresh = true;
+  },
 });

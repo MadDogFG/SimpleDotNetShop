@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
-using System.Linq.Expressions; // 用于动态构建查询表达式
+using System.Linq.Expressions;
 using System.Threading.Tasks;
-using Weixin_Project.DTOs; // 引入DTOs命名空间
-using Weixin_Project.Entities; // 引入Entities命名空间
+using Weixin_Project.DTOs;
+using Weixin_Project.Entities;
+using Weixin_Project.Utils;
 
 namespace Weixin_Project.Controllers
 {
@@ -39,7 +40,7 @@ namespace Weixin_Project.Controllers
                 .Include(o => o.User) // 包含用户信息，用于显示用户名
                 .Include(o => o.ShippingAddress) // 包含收货地址信息
                 .Include(o => o.OrderItems) // 包含订单项
-                    .ThenInclude(oi => oi.Product) // 在订单项中包含商品信息
+                .ThenInclude(oi => oi.Product) // 在订单项中包含商品信息
                 .OrderByDescending(o => o.OrderDate) // 默认按下单时间降序排序
                 .AsQueryable(); // 转换为 IQueryable 以便后续添加条件
 
@@ -161,7 +162,7 @@ namespace Weixin_Project.Controllers
         }
 
         // 更新订单状态 (管理员操作)
-        [HttpPut("{id}/UpdateStatus")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusRequestDto updateStatusDto)
         {
             // FluentValidation会先验证 updateStatusDto
@@ -187,7 +188,7 @@ namespace Weixin_Project.Controllers
         }
 
         // (可选) 获取所有订单状态的列表，用于前端筛选下拉框
-        [HttpGet("Statuses")]
+        [HttpGet]
         public IActionResult GetOrderStatuses()
         {
             var statuses = Enum.GetValues(typeof(OrderStatus))

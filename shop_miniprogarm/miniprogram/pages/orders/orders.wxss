@@ -15,11 +15,17 @@
 .empty-text { font-size: 28rpx; color: #aaa; margin-bottom: 30rpx; }
 .go-shopping-btn-order, .retry-btn-order {
   margin-bottom: auto;
-  width: 240rpx; height: 70rpx; line-height: 70rpx; font-size: 28rpx;
-  background-color: #1989fa; color: white; border-radius: 35rpx;
+  line-height: center;
+  width: 240rpx; 
+  height: 70rpx;  
+  font-size: 28rpx;
+  background-color: #1989fa; 
+  color: white; 
+  border-radius: 35rpx;
 }
 
 .order-tabs {
+  padding-top: 10%;
   display: flex; background-color: #fff; border-bottom: 1rpx solid #eee;
   margin-bottom: 15rpx; position: sticky; top: 0; z-index: 10; /* 吸顶效果 */
 }
@@ -34,7 +40,10 @@
   background-color: #1989fa; border-radius: 2rpx;
 }
 
-.order-scroll-list { box-sizing: border-box; }
+.order-scroll-list { 
+  box-sizing: border-box; 
+  padding-bottom: 10%;
+}
 .order-card {
   background-color: #fff; margin: 0 20rpx 20rpx 20rpx; /* 顶部边距由tabs的margin-bottom控制 */
   border-radius: 16rpx; padding: 25rpx; box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.05);
@@ -184,8 +193,3 @@
 .modal-btn-global.primary-btn-global { background-color: #1989fa; color: white; }
 .modal-btn-global.secondary-btn-global { background-color: #f0f0f0; color: #555; border: 1rpx solid #ddd; }
 .modal-btn-global[disabled] { opacity: 0.6; }
-
-.back-to-top-btn { /* 与 products 页一致 */
-  position: fixed; right: 30rpx; bottom: 100rpx; width: 80rpx; height: 80rpx;
-  border-radius: 50%; box-shadow: 0 2rpx 10rpx rgba(0,0,0,0.1);
-}

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using Weixin_Project.Entities;
 
-namespace Weixin_Project
+namespace Weixin_Project.Utils
 {
     public class ApplicationDbContext : IdentityDbContext<IdentityUser>
     {
@@ -27,7 +27,7 @@ namespace Weixin_Project
 
             // 从当前程序集加载所有实现了IEntityTypeConfiguration<>接口的配置类
             // 您已有的ProductConfig就是通过这种方式加载的
-            modelBuilder.ApplyConfigurationsFromAssembly(this.GetType().Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 
             // 为 Product 实体配置全局查询过滤器，实现软删除 (查询时自动排除IsDeleted=true的数据)
             modelBuilder.Entity<Product>().HasQueryFilter(p => !p.IsDeleted);

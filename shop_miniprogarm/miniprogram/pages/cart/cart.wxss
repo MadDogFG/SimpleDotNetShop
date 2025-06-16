@@ -50,7 +50,7 @@
 .go-shopping-btn {
   width: 300rpx;
   height: 80rpx;
-  line-height: 80rpx;
+  line-height: center;
   background-color: #1989fa; /* 主题色 */
   color: white;
   border-radius: 40rpx;

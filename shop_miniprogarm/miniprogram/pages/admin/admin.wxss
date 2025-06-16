@@ -202,10 +202,6 @@
 
 /* 删除确认弹窗 */
 .delete-confirm {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
   width: 80%;
   max-width: 350px;
   background: #fff;
@@ -213,7 +209,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
   text-align: center;
-  z-index: 100;
 }
 
 .confirm-buttons {
@@ -416,4 +411,26 @@ input, textarea {
 
 .restore-btn[disabled] {
   opacity: 0.7;
+}
+
+.delete-confirm-overlay {
+  position: fixed; /* 固定定位，覆盖整个视口 */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 半透明的灰色背景 */
+  display: flex; /* 使用 Flexbox 布局 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  z-index: 1000; /* 确保在其他内容之上，可以根据需要调整 */
+}
+.delete-confirm-dialog{
+  text-align: center;
+}
+
+.delete-confirm-text{
+  font-size: x-large;
+  color: #ddd;
+  font-weight: bold;
 }

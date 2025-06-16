@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
+using Weixin_Project.Utils;
 
 namespace Weixin_Project
 {

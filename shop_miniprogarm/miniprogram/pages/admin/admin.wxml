@@ -101,13 +101,13 @@
       <text>统计</text>
     </view>
     <view class="tabbar-item {{activeTab === 'profile' ? 'active' : ''}}" data-tab="profile" bindtap="switchTab">
-      <image src="/images/profile.png" class="tab-icon" /> <!-- 请确保路径正确 -->
+      <image src="/images/tabs/profile.png" class="tab-icon" /> <!-- 请确保路径正确 -->
       <text>个人中心</text>
     </view>
   </view>
 
   <!-- 删除确认弹窗 -->
-  <view wx:if="{{selectedId}}" class="delete-confirm-overlay">
+  <view wx:if="{{selectedId}}" class="delete-confirm-overlay" catchtouchmove="preventTouchMove">
     <view class="delete-confirm-dialog">
       <text class="delete-confirm-text">确定要删除 "{{selectedProductName}}" 吗?</text>
       <view class="confirm-buttons">

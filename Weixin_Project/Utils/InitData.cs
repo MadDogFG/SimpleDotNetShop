@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Weixin_Project
+namespace Weixin_Project.Utils
 {
     public class InitData
     {

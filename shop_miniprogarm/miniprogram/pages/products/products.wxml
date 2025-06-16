@@ -1,9 +1,6 @@
+<!-- shop_miniprogarm/miniprogram/pages/products/products.wxml -->
+
 <view class="container product-list-page">
-  <!-- 搜索栏 (可选) -->
-  <view class="search-bar-container" wx:if="{{false}}"> <!-- 暂时隐藏搜索栏，后续可实现 -->
-    <input class="search-input" placeholder="搜索商品" bindconfirm="onSearch" confirm-type="search" />
-    <button class="search-btn" size="mini" bindtap="onSearch">搜索</button>
-  </view>
 
   <block wx:if="{{loading && products.length === 0}}">
     <view class="loading-placeholder">
@@ -13,16 +10,16 @@
   </block>
   <block wx:elif="{{!loading && products.length === 0 && !networkError}}">
     <view class="empty-products">
-      <image class="empty-icon" src="/images/empty-box.png" mode="aspectFit" /> <!-- 确保有此图片 -->
+      <image class="empty-icon" src="/images/empty-box.png" mode="aspectFit" />
       <text class="empty-text">暂时没有商品哦～</text>
     </view>
   </block>
   <block wx:elif="{{networkError}}">
-      <view class="empty-products">
-          <image class="empty-icon" src="/images/network-error.png" mode="aspectFit" />
-          <text class="empty-text">网络开小差了，请稍后重试</text>
-          <button class="retry-btn" bindtap="loadProducts">点击重试</button>
-      </view>
+    <view class="empty-products">
+      <image class="empty-icon" src="/images/network-error.png" mode="aspectFit" />
+      <text class="empty-text">网络开小差了，请稍后重试</text>
+      <button class="retry-btn" bindtap="loadProducts">点击重试</button>
+    </view>
   </block>
   <block wx:else>
     <scroll-view scroll-y class="products-grid-scroll" bindscrolltolower="loadMoreProducts" style="height: {{scrollViewHeight}}px;">
@@ -41,9 +38,8 @@
             </view>
           </view>
         </view>
-        <!-- 空占位，如果需要严格的3列对齐，且最后一行的项不足3个 -->
         <block wx:if="{{products.length % 3 !== 0}}">
-            <view wx:for="{{3 - (products.length % 3)}}" wx:key="*this" class="product-item-user placeholder"></view>
+          <view wx:for="{{3 - (products.length % 3)}}" wx:key="*this" class="product-item-user placeholder"></view>
         </block>
       </view>
       <view class="load-more-indicator" wx:if="{{isLoadingMore}}">
@@ -55,8 +51,48 @@
       </view>
     </scroll-view>
   </block>
-
-  <!-- 回到顶部按钮 (可选) -->
   <image src="/images/back-to-top.png" class="back-to-top-btn" wx:if="{{showBackToTop}}" bindtap="backToTop"></image>
+</view>
 
+<!-- 商品详情弹窗 -->
+<view wx:if="{{showProductDetailModal}}" class="modal-overlay-global" catchtouchmove="preventTouchMove">
+  <view class="product-detail-modal-content">
+    <view class="product-detail-modal-header">
+      <text class="modal-title-text">商品详情</text>
+      <image src="/images/close.png" class="close-icon-global" bindtap="closeProductDetailModal" />
+    </view>
+
+    <block wx:if="{{productDetailLoading}}">
+      <view class="loading-placeholder-modal" style="height: 60vh;">
+        <view class="loading-spinner-local"></view>
+        <text>加载详情中...</text>
+      </view>
+    </block>
+    <block wx:elif="{{currentProductDetail}}">
+      <scroll-view scroll-y class="product-detail-modal-body">
+        <image class="detail-image" src="{{currentProductDetail.imageUrl && currentProductDetail.imageUrl !== '无' ? '/images/'+currentProductDetail.imageUrl : '/images/default-product.png'}}" mode="aspectFit" />
+        <view class="detail-info-section section-card-modal">
+          <text class="detail-name">{{currentProductDetail.name}}</text>
+          <text class="detail-price">¥{{currentProductDetail.price}}</text>
+          <text class="detail-stock" wx:if="{{currentProductDetail.stock > 0}}">库存: {{currentProductDetail.stock}}</text>
+          <text class="detail-stock out-of-stock" wx:else>已售罄</text>
+        </view>
+
+        <view class="detail-description-section section-card-modal">
+          <view class="section-title-modal">商品描述</view>
+          <text class="detail-description">{{currentProductDetail.description || '暂无描述'}}</text>
+        </view>
+      </scroll-view>
+    </block>
+    <block wx:else>
+      <view class="empty-detail-modal">无法加载商品详情</view>
+    </block>
+
+    <view class="product-detail-modal-footer" wx:if="{{currentProductDetail && !productDetailLoading}}">
+      <button class="modal-btn-global primary-btn-global" bindtap="addToCart" disabled="{{currentProductDetail.stock <= 0 || currentProductDetail.addingToCart}}">
+        <text wx:if="{{!currentProductDetail.addingToCart}}">加入购物车</text>
+        <view wx:else class="loading-spinner-btn-modal"></view>
+      </button>
+    </view>
+  </view>
 </view>

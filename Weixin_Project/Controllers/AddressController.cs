@@ -7,7 +7,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Weixin_Project.DTOs; // 引入DTOs命名空间
-using Weixin_Project.Entities; // 引入Entities命名空间
+using Weixin_Project.Entities;
+using Weixin_Project.Utils; // 引入Entities命名空间
 
 namespace Weixin_Project.Controllers
 {

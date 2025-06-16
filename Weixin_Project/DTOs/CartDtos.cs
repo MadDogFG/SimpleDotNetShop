@@ -29,32 +29,26 @@ namespace Weixin_Project.DTOs
     // 添加商品到购物车的请求DTO
     public class AddToCartRequestDto
     {
-        // [Required(ErrorMessage = "商品ID不能为空")] // FluentValidation处理
-        // [Range(1, int.MaxValue, ErrorMessage = "无效的商品ID")]
         public int ProductId { get; set; }
-
-        // [Required(ErrorMessage = "商品数量不能为空")]
-        // [Range(1, 10, ErrorMessage = "添加数量必须在1到10之间")] // 假设一次最多加10个
         public int Quantity { get; set; }
     }
 
     // 更新购物车中商品数量的请求DTO
     public class UpdateCartItemQuantityRequestDto
     {
-        // [Required(ErrorMessage = "购物车项ID不能为空")] // 或者用 ProductId
-        // [Range(1, int.MaxValue, ErrorMessage = "无效的购物车项ID")]
         public int CartItemId { get; set; } // 使用 CartItem 的 ID 来定位要更新的项
-
-        // [Required(ErrorMessage = "商品数量不能为空")]
-        // [Range(0, 100, ErrorMessage = "商品数量必须在0到100之间")] // 0表示移除该项
         public int Quantity { get; set; } // 新的数量，如果为0，则表示从购物车移除该商品项
     }
 
-    // 从购物车移除单个商品项的请求DTO (可以不需要，直接用UpdateCartItemQuantityRequestDto Quantity=0)
-    // 但为了接口语义清晰，可以单独定义
+    // 从购物车移除单个商品项的请求DTO 
     public class RemoveCartItemRequestDto
     {
-        // [Required(ErrorMessage = "购物车项ID不能为空")]
         public int CartItemId { get; set; }
+    }
+    // 批量删除
+    public class RemoveCartItemsRequestDto
+    {
+        [Required(ErrorMessage = "要删除的购物车项ID列表不能为空")]
+        public List<int> CartItemIds { get; set; } = new List<int>();
     }
 }

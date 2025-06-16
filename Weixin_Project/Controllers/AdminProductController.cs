@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq; // 需要引入Linq
+using System.Linq;
 using System.Threading.Tasks;
-using Weixin_Project.DTOs; // 引入DTOs命名空间
-using Weixin_Project.Entities; // 如果还需要Product实体 (例如在映射时)
+using Weixin_Project.DTOs;
+using Weixin_Project.Entities;
+using Weixin_Project.Utils;
 
 namespace Weixin_Project.Controllers
 {
@@ -25,9 +26,8 @@ namespace Weixin_Project.Controllers
         public async Task<IActionResult> CreateProduct([FromBody] CreateProductRequestDto createProductDto)
         {
             // FluentValidation 会在进入这个Action之前自动验证 createProductDto
-            // 如果验证失败，会自动返回400 Bad Request，并附带错误信息
-            // 所以这里通常不需要再次检查 ModelState.IsValid，除非你有特殊的处理逻辑
 
+            //新建商品
             var product = new Product
             {
                 Name = createProductDto.Name,
@@ -39,8 +39,8 @@ namespace Weixin_Project.Controllers
                 IsDeleted = false // 新建商品默认不是软删除状态
             };
 
-            _dbContext.Products.Add(product);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.Products.Add(product);//添加到数据库上下文中
+            await _dbContext.SaveChangesAsync();//保存更改到数据库
 
             // 返回创建的商品信息 (使用 ProductViewModel)
             var productViewModel = new ProductViewModel
@@ -54,13 +54,11 @@ namespace Weixin_Project.Controllers
                 IsDeleted = product.IsDeleted,
                 CreateTime = product.CreateTime
             };
-            // 通常会返回一个 201 Created 状态码，并包含新资源的URI和内容
+            // 返回一个 201 Created 状态码，并包含新资源的URI和内容
             return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, productViewModel);
-            // 或者简单返回Ok:
-            // return Ok($"商品 [{product.Name}] 创建成功!");
         }
 
-        // 获取所有商品 (包含软删除的，因为是管理员接口) - 使用分页
+        // 获取所有商品且使用分页
         [HttpGet]
         public async Task<ActionResult<PagedResponse<ProductViewModel>>> GetAllProducts(int pageIndex = 1, int pageSize = 10)
         {
@@ -68,11 +66,11 @@ namespace Weixin_Project.Controllers
             if (pageSize < 1) pageSize = 10;
             if (pageSize > 100) pageSize = 100; // 限制每页最大数量
 
-            // 管理员可以查看所有商品，包括软删除的，所以使用 IgnoreQueryFilters()
+            // 管理员可以查看所有商品，包括软删除的，所以使用 IgnoreQueryFilters()，新创建的在前的排序
             var query = _dbContext.Products.IgnoreQueryFilters().OrderByDescending(p => p.CreateTime);
 
-            var totalCount = await query.CountAsync();
-            var items = await query
+            var totalCount = await query.CountAsync(); // 获取总记录数
+            var items = await query // 查询商品列表
                 .Skip((pageIndex - 1) * pageSize)
                 .Take(pageSize)
                 .Select(p => new ProductViewModel // 映射到ViewModel
@@ -103,9 +101,7 @@ namespace Weixin_Project.Controllers
         [HttpGet("{id}")] // 将id作为路由参数
         public async Task<ActionResult<ProductViewModel>> GetProductById(int id)
         {
-            var product = await _dbContext.Products
-                                        .IgnoreQueryFilters() // 管理员可以查看软删除的
-                                        .FirstOrDefaultAsync(p => p.Id == id);
+            var product = await _dbContext.Products.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
             {
@@ -132,7 +128,7 @@ namespace Weixin_Project.Controllers
         {
             // FluentValidation 自动验证 updatedProductDto
 
-            // 管理员操作，可以获取包括软删除的商品进行修改
+            // 找到商品
             var product = await _dbContext.Products.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
@@ -151,7 +147,7 @@ namespace Weixin_Project.Controllers
             {
                 await _dbContext.SaveChangesAsync();
             }
-            catch (DbUpdateConcurrencyException) // 处理并发冲突，虽然在这个简单场景下概率不高
+            catch (DbUpdateConcurrencyException) // 处理并发冲突，乐观锁
             {
                 if (!_dbContext.Products.IgnoreQueryFilters().Any(e => e.Id == id))
                 {
@@ -162,15 +158,13 @@ namespace Weixin_Project.Controllers
                     throw; // 重新抛出异常，让全局异常处理器处理
                 }
             }
-            // return Ok($"商品 [{product.Name}] 修改成功!");
-            return NoContent(); // HTTP 204 No Content 是更新成功的常用响应，表示操作成功但响应体中无内容
+            return Ok($"商品 [{product.Name}] 修改成功!");
         }
 
         // 软删除商品
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
-            // 管理员操作，即使商品已被软删除，理论上这个操作也是幂等的
             var product = await _dbContext.Products.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
@@ -191,7 +185,7 @@ namespace Weixin_Project.Controllers
         }
 
         // 恢复软删除的商品
-        [HttpPut("Restore/{id}")] // 使用不同的路径区分操作
+        [HttpPut("{id}")] // 使用不同的路径区分操作
         public async Task<IActionResult> RestoreProduct(int id)
         {
             var product = await _dbContext.Products.IgnoreQueryFilters().FirstOrDefaultAsync(p => p.Id == id);

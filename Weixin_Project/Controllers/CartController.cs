@@ -8,7 +8,8 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Weixin_Project.DTOs; // 引入DTOs命名空间
-using Weixin_Project.Entities; // 引入Entities命名空间
+using Weixin_Project.Entities;
+using Weixin_Project.Utils; // 引入Entities命名空间
 
 namespace Weixin_Project.Controllers
 {
@@ -307,6 +308,53 @@ namespace Weixin_Project.Controllers
             return Ok(new { message = "购物车已清空。" });
             // 或者返回空的CartViewModel:
             // return Ok(MapCartToViewModel(cart ?? new Cart { UserId = userId }));
+        }
+
+        /// <summary>
+        /// 批量删除购物车中的商品项
+        /// </summary>
+        /// <param name="removeDto">包含要删除的购物车项ID列表的DTO</param>
+        /// <returns>更新后的购物车视图模型</returns>
+        [HttpPost] // 使用 POST 来接收请求体中的ID列表
+        public async Task<ActionResult<CartViewModel>> RemoveMultipleItemsFromCart([FromBody] RemoveCartItemsRequestDto removeDto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized(new { message = "无法获取用户信息。" });
+            }
+
+            // FluentValidation 会自动验证 removeDto，如果验证失败，会返回 BadRequest
+
+            var cart = await _dbContext.Carts
+                .Include(c => c.Items)
+                .FirstOrDefaultAsync(c => c.UserId == userId);
+
+            if (cart == null || !cart.Items.Any())
+            {
+                // 购物车已为空或不存在，无需执行删除操作
+                return Ok(MapCartToViewModel(cart)); // 返回一个空的或当前状态的购物车
+            }
+
+            // 筛选出属于当前用户购物车且在请求列表中存在的商品项
+            var itemsToRemove = cart.Items
+                .Where(ci => removeDto.CartItemIds.Contains(ci.Id) && ci.CartId == cart.Id)
+                .ToList();
+
+            if (!itemsToRemove.Any())
+            {
+                // 没有找到匹配的商品项，可能已经删除或ID不正确
+                return Ok(MapCartToViewModel(cart)); // 返回当前购物车状态
+            }
+
+            _dbContext.CartItems.RemoveRange(itemsToRemove);
+            cart.LastModifiedDate = DateTime.UtcNow; // 更新购物车最后修改时间
+
+            await _dbContext.SaveChangesAsync();
+
+            // 重新获取更新后的购物车数据并返回
+            var updatedCart = await GetOrCreateUserCartAsync(userId);
+            return Ok(MapCartToViewModel(updatedCart));
         }
     }
 }
