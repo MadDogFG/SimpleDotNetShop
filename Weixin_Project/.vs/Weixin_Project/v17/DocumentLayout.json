@@ -3,6 +3,38 @@
   "WorkspaceRootPath": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\dtos\\statisticsdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:dtos\\statisticsdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\controllers\\adminstatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\adminstatisticscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\userdtovaildators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:validators\\userdtovaildators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\cartdtovalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:validators\\cartdtovalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\registerdtovaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:validators\\registerdtovaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\controllers\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:dtos\\userdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\controllers\\adminordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\adminordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\cartdtovalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:validators\\cartdtovalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\dtos\\cartdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +91,6 @@
       "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:dtos\\authdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:dtos\\productdtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:entities\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -97,10 +121,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:entities\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\registerdtovaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|solutionrelative:validators\\registerdtovaildator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97A4C51C-2203-46AF-8D7C-C02FD6617B47}|Weixin_Project.csproj|d:\\baidusyncdisk\\code\\dotnetproject\\weixin_project\\validators\\addressdtovalidators.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,49 +162,127 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "PagedResponse.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\PagedResponse.cs",
-              "RelativeDocumentMoniker": "Utils\\PagedResponse.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\PagedResponse.cs",
-              "RelativeToolTip": "Utils\\PagedResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "StatisticsDtos.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\StatisticsDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\StatisticsDtos.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\StatisticsDtos.cs",
+              "RelativeToolTip": "DTOs\\StatisticsDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T14:41:46.582Z"
+              "WhenOpened": "2025-06-17T02:25:18.517Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderController.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\OrderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\OrderController.cs",
-              "RelativeToolTip": "Controllers\\OrderController.cs",
-              "ViewState": "AgIAAD0BAAAAAAAAAAAAAE0BAAAnAAAAAAAAAA==",
+              "Title": "AdminStatisticsController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminStatisticsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminStatisticsController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminStatisticsController.cs",
+              "RelativeToolTip": "Controllers\\AdminStatisticsController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAYwGEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T10:51:23.862Z",
+              "WhenOpened": "2025-06-17T02:24:42.88Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserDtoVaildators.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\UserDtoVaildators.cs",
+              "RelativeDocumentMoniker": "Validators\\UserDtoVaildators.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\UserDtoVaildators.cs",
+              "RelativeToolTip": "Validators\\UserDtoVaildators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T02:19:42.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDtos.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\UserDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\UserDtos.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\UserDtos.cs",
+              "RelativeToolTip": "DTOs\\UserDtos.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAQwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T02:17:46.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminUserController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminUserController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminUserController.cs",
+              "RelativeToolTip": "Controllers\\AdminUserController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAnwGgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-17T02:17:03.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "Entities\\Order.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Order.cs",
+              "RelativeToolTip": "Entities\\Order.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwBsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T11:35:21.963Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminOrderController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminOrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminOrderController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminOrderController.cs",
+              "RelativeToolTip": "Controllers\\AdminOrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAL8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T10:30:29.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AddressController.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AddressController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AddressController.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AddressController.cs",
-              "RelativeToolTip": "Controllers\\AddressController.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAYwCoAAAAxAAAAAAAAAA==",
+              "Title": "RegisterDtoVaildator.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\RegisterDtoVaildator.cs",
+              "RelativeDocumentMoniker": "Validators\\RegisterDtoVaildator.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\RegisterDtoVaildator.cs",
+              "RelativeToolTip": "Validators\\RegisterDtoVaildator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:22:07.783Z",
+              "WhenOpened": "2025-06-11T12:50:18.355Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 3,
+              "Title": "CartDtoValidators.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\CartDtoValidators.cs",
+              "RelativeDocumentMoniker": "Validators\\CartDtoValidators.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\CartDtoValidators.cs",
+              "RelativeToolTip": "Validators\\CartDtoValidators.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T12:20:12.281Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Product.cs",
               "RelativeDocumentMoniker": "Entities\\Product.cs",
@@ -196,33 +294,56 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Order.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Order.cs",
-              "RelativeDocumentMoniker": "Entities\\Order.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Order.cs",
-              "RelativeToolTip": "Entities\\Order.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAUwBsAAABOAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "AddressController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AddressController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AddressController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AddressController.cs",
+              "RelativeToolTip": "Controllers\\AddressController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAYwCoAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T11:35:21.963Z",
+              "WhenOpened": "2025-06-14T11:22:07.783Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAAAE0BAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T10:51:23.862Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProductDtos.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\ProductDtos.cs",
+              "RelativeDocumentMoniker": "DTOs\\ProductDtos.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\ProductDtos.cs",
+              "RelativeToolTip": "DTOs\\ProductDtos.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-12T04:27:01.665Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AdminOrderController.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminOrderController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminOrderController.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminOrderController.cs",
-              "RelativeToolTip": "Controllers\\AdminOrderController.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAAwL8AAAAtAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "PagedResponse.cs",
+              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\PagedResponse.cs",
+              "RelativeDocumentMoniker": "Utils\\PagedResponse.cs",
+              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\PagedResponse.cs",
+              "RelativeToolTip": "Utils\\PagedResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T10:30:29.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T14:41:46.582Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "AdminProductController.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AdminProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminProductController.cs",
@@ -230,12 +351,11 @@
               "RelativeToolTip": "Controllers\\AdminProductController.cs",
               "ViewState": "AgIAAKUAAAAAAAAAAAA9wLsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T03:48:48.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-12T03:48:48.29Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Utils\\ApplicationDbContext.cs",
@@ -247,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -255,12 +375,11 @@
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-16T17:10:48.479Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T17:10:48.479Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Controllers\\CartController.cs",
@@ -268,25 +387,11 @@
               "RelativeToolTip": "Controllers\\CartController.cs",
               "ViewState": "AgIAACoBAAAAAAAAAAAQwGUBAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T12:22:08.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T12:22:08.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CartDtoValidators.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\CartDtoValidators.cs",
-              "RelativeDocumentMoniker": "Validators\\CartDtoValidators.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\CartDtoValidators.cs",
-              "RelativeToolTip": "Validators\\CartDtoValidators.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwC8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T12:20:12.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "CartDtos.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\CartDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\CartDtos.cs",
@@ -294,12 +399,11 @@
               "RelativeToolTip": "DTOs\\CartDtos.cs",
               "ViewState": "AgIAAB8AAAAAAAAAAAAUwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-14T12:19:52.862Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-14T12:19:52.862Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "ProductDtoValidators.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\ProductDtoValidators.cs",
               "RelativeDocumentMoniker": "Validators\\ProductDtoValidators.cs",
@@ -311,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -323,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "AuthDtos.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\AuthDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\AuthDtos.cs",
@@ -335,19 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ProductDtos.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\ProductDtos.cs",
-              "RelativeDocumentMoniker": "DTOs\\ProductDtos.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\ProductDtos.cs",
-              "RelativeToolTip": "DTOs\\ProductDtos.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAhwCYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T04:27:01.665Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 22,
               "Title": "Address.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Address.cs",
               "RelativeDocumentMoniker": "Entities\\Address.cs",
@@ -359,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 23,
               "Title": "OrderDtos.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\OrderDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\OrderDtos.cs",
@@ -371,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 25,
               "Title": "OrderDtoValidators.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\OrderDtoValidators.cs",
               "RelativeDocumentMoniker": "Validators\\OrderDtoValidators.cs",
@@ -383,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 26,
               "Title": "AddressDtos.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\DTOs\\AddressDtos.cs",
               "RelativeDocumentMoniker": "DTOs\\AddressDtos.cs",
@@ -395,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 24,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
@@ -407,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 27,
               "Title": "OrderItem.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\OrderItem.cs",
               "RelativeDocumentMoniker": "Entities\\OrderItem.cs",
@@ -419,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 28,
               "Title": "CartItem.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\CartItem.cs",
               "RelativeDocumentMoniker": "Entities\\CartItem.cs",
@@ -431,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 29,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Entities\\Cart.cs",
               "RelativeDocumentMoniker": "Entities\\Cart.cs",
@@ -443,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 36,
               "Title": "20250614121907_03_AddCartEntities_EditProduct.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Migrations\\20250614121907_03_AddCartEntities_EditProduct.cs",
               "RelativeDocumentMoniker": "Migrations\\20250614121907_03_AddCartEntities_EditProduct.cs",
@@ -455,19 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "RegisterDtoVaildator.cs",
-              "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\RegisterDtoVaildator.cs",
-              "RelativeDocumentMoniker": "Validators\\RegisterDtoVaildator.cs",
-              "ToolTip": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\RegisterDtoVaildator.cs",
-              "RelativeToolTip": "Validators\\RegisterDtoVaildator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T12:50:18.355Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 31,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -479,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 30,
               "Title": "AddressDtoValidators.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\AddressDtoValidators.cs",
               "RelativeDocumentMoniker": "Validators\\AddressDtoValidators.cs",
@@ -491,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 32,
               "Title": "LoginDtoVaildator.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Validators\\LoginDtoVaildator.cs",
               "RelativeDocumentMoniker": "Validators\\LoginDtoVaildator.cs",
@@ -503,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 37,
               "Title": "20250614094619_02_AddedOrderAddressEntities.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Migrations\\20250614094619_02_AddedOrderAddressEntities.cs",
               "RelativeDocumentMoniker": "Migrations\\20250614094619_02_AddedOrderAddressEntities.cs",
@@ -515,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 33,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -527,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 34,
               "Title": "InitData.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Utils\\InitData.cs",
               "RelativeDocumentMoniker": "Utils\\InitData.cs",
@@ -539,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 35,
               "Title": "20250612035351_01_AddProduct.cs",
               "DocumentMoniker": "D:\\BaiduSyncdisk\\Code\\dotNetProject\\Weixin_Project\\Migrations\\20250612035351_01_AddProduct.cs",
               "RelativeDocumentMoniker": "Migrations\\20250612035351_01_AddProduct.cs",

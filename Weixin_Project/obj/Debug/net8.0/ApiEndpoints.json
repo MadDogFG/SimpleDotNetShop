@@ -354,6 +354,166 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Weixin_Project.Controllers.AdminStatisticsController",
+    "Method": "GetCoreStatistics",
+    "RelativePath": "api/AdminStatistics/GetCoreStatistics",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.StatisticsViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminStatisticsController",
+    "Method": "GetLast7DaysSales",
+    "RelativePath": "api/AdminStatistics/GetLast7DaysSales",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Weixin_Project.DTOs.DailySalesData, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminUserController",
+    "Method": "GetUserById",
+    "RelativePath": "api/AdminUser/GetUserById/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.DTOs.UserViewModel",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminUserController",
+    "Method": "GetUsers",
+    "RelativePath": "api/AdminUser/GetUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageIndex",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "searchTerm",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "includeAdmin",
+        "Type": "System.Boolean",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Weixin_Project.Utils.PagedResponse\u00601[[Weixin_Project.DTOs.UserViewModel, Weixin_Project, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminUserController",
+    "Method": "LockUser",
+    "RelativePath": "api/AdminUser/LockUser/LockUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminUserController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/AdminUser/ResetPassword/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "Weixin_Project.DTOs.AdminResetPasswordRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Weixin_Project.Controllers.AdminUserController",
+    "Method": "UnlockUser",
+    "RelativePath": "api/AdminUser/UnlockUser/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Weixin_Project.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/Login",

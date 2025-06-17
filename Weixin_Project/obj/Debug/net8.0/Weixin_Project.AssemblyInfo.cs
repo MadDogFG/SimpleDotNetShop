@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Weixin_Project")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+87c7d62de5f1ea2aaf5c3914ba6cd909d8d0c207")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5883b63939aadc5120d13f386c1d4b16e928c73a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Weixin_Project")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Weixin_Project")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
